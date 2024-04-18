@@ -12,11 +12,14 @@ FIXME: place any data you want learners to use in `episodes/data` and then use
        a relative link ( [data zip file](data/lesson-data.zip) ) to provide a
        link to it, replacing the example.com link.
 -->
-Raw data and scripts (500Gb): /save_projet/domino_wp3_isollates
 
-Working directory (5Tb): /work_projet/domino_wp3_isollates
+You don't need to download any data ahead of time, it is available on the Migale cluster:
 
-Spreadsheet with assembly info: https://docs.google.com/spreadsheets/d/1T0EJeiJInzjfJgT4qG3eR0-DRwHkiHjyb937-c_RnLQ/edit#gid=0 
+* **Raw data and scripts (500Gb)**: /save_projet/domino_wp3_isollates
+
+* **Working directory (5Tb)**: /work_projet/domino_wp3_isollates
+
+* **Spreadsheet with assembly info**: https://docs.google.com/spreadsheets/d/1T0EJeiJInzjfJgT4qG3eR0-DRwHkiHjyb937-c_RnLQ/edit#gid=0 
 
 ## Software Setup
 
