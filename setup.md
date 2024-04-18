@@ -27,7 +27,7 @@ You don't need to download any data ahead of time, it is available on the Migale
 
 ### Details
 
-You firstly need to connect to the server `front` using the login and password emailed to you when your account was approved.
+You firstly need to connect to the `front` server of the Migale cluster using the login and password emailed to you when your account was approved (Teagasc participants should follow the Windows instructions)
 :::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::: spoiler
@@ -50,10 +50,10 @@ Use the Terminal.app
 :::::::::::::::: spoiler
 
 ### Linux
-
+If you are one of the lucky few to have a work laptop with a linux distro and terminal access: 
 Open the Terminal ( `Ctrl ` +  `Alt ` +  `T`) and  `ssh ` to the  `front` server:
 ```
-local:~$ ssh -X stage01@front.migale.inrae.fr
+local:~$ ssh -X yourusername@front.migale.inrae.fr
 Password:
 ```
 
