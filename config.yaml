@@ -60,6 +60,7 @@ contact: 'katie.fala@teagasc.ie' # FIXME
 # Order of episodes in your lesson
 episodes: 
 - introduction.Rmd
+- demo.Rmd
 
 # Information for Learners
 learners: 
