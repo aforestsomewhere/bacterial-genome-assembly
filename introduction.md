@@ -19,10 +19,18 @@ exercises: 2
 
 ## Introduction
 
+Bacterial genomes are extremely dynamic, undergoing frequent loss and gain of both chromosomal and extrachromosomal elements [1] including:
+* insertion sequences
+* rep sequences
+* ICE elements
+* plasmids
 
+This can be particularly interesting to food microbiologists in the context of adaptations to dynamic niches during food fermentations. In order to detect and characterise this kind of genomic plasticity, we require high quality bacterial genome assemblies which are both:
 
-What you need to know is that there are three sections required for a valid
-Carpentries lesson template:
+* Complete - fully contiguous
+* Accurate - fully match the actual DNA sequence of the organism
+
+Short-read sequencing (e.g. Illumina) provides high-quality reads which provide for accurate assemblies. The short length of reads (100-300bp) impedes assembly however, particularly at repetitive regions. This results in fragmented draft assemblies split up into several contigs. Furthermore, dynamic genome elements (such as ICE elements, IS) are often themselves repetitive, meaning that their true biological presence is not reflected in the draft assembly.
 
  1. `questions` are displayed at the beginning of the episode to prime the
     learner for the content.
