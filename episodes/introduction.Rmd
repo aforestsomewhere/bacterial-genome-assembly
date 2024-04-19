@@ -34,14 +34,12 @@ This can be particularly interesting to food microbiologists in the context of a
 
 Short-read sequencing (e.g. Illumina) generates highly accurate reads, but the short length of reads (100-300bp) hinders assembly, particularly at repetitive regions highlighted above (IS, ICE, REP), resulting in fragmented draft assemblies. Furthermore, dynamic genome elements (such as ICE elements, IS) are often themselves repetitive, meaning that their true biological presence is not reflected in the draft assembly.
 
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 1. `questions` are displayed at the beginning of the episode to prime the
     learner for the content.
- 2. `objectives` are the learning objectives for an episode displayed with
+2. `objectives` are the learning objectives for an episode displayed with
     the questions.
- 3. `keypoints` are displayed at the end of the episode to reinforce the
+3. `keypoints` are displayed at the end of the episode to reinforce the
     objectives.
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
@@ -54,7 +52,7 @@ Insertion sequences are short genomic elements which are frequently found in bac
 ## Show more
  
 ![Overview of IS - reproduced from 10.1128/spectrum.02112-21](https://www.ncbi.nlm.nih.gov/pmc/articles/instance/9241782/bin/spectrum.02112-21-f007.jpg){alt='Insertion Sequences'}
-::::::::::::::::::::::::::::::::::::: challenge 
+:::::::::::::::::::::::::::::::::::::
 
 ## REP sequences?
 
@@ -65,7 +63,8 @@ REP sequences are genomic regions containing highly repetitive and palindromic s
 ## Show more
 
 ![Overview of rep sequences - reproduced from 10.1111/1574-6976.12036](https://d3i71xaburhd42.cloudfront.net/9d601ea51726a3257a80ba2f7cc9f98c4a569397/2-Figure1-1.png){alt='Examples of rep sequences'}
-::::::::::::::::::::::::::::::::::::: challenge 
+
+:::::::::::::::::::::::::::::::::::::
 
 ## ICEs
 
