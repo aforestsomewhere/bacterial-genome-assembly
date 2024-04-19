@@ -52,7 +52,7 @@ Insertion sequences are short genomic elements which are frequently found in bac
  
 ![Overview of IS - reproduced from 10.1128/spectrum.02112-21](https://www.ncbi.nlm.nih.gov/pmc/articles/instance/9241782/bin/spectrum.02112-21-f007.jpg){alt='Insertion Sequences'}
 
-:::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::: challenge 
 
 ## REP sequences?
 
@@ -75,11 +75,10 @@ Integrative and Conjugative elements are mobile genetic elements which can move 
  
 ![Overview of ICE structure - reproduced from 10.1007/s10142-022-00903-2](https://media.springernature.com/lw685/springer-static/image/art%3A10.1007%2Fs10142-022-00903-2/MediaObjects/10142_2022_903_Fig2_HTML.png?as=webp){alt='ICEs'}
 
+:::::::::::::::::::::::::::::::::
+
 Short-read sequencing (e.g. Illumina) generates highly accurate reads, but the short length of reads (100-300bp) hinders assembly, particularly at repetitive regions highlighted above (IS, ICE, REP), resulting in fragmented draft assemblies. Furthermore, dynamic genome elements (such as ICE elements, IS) are often themselves repetitive, meaning that their true biological presence is not reflected in the draft assembly.
 
-:::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 ## Assembling the "perfect" bacterial genome?
 
@@ -114,49 +113,18 @@ Several long-read assembly tools exist for genome assembly, each with their own 
 
 Trycycler is a tool developed by Ryan Wick and colleagues to address this problem. Keeping with the idea that any assembly is a **hypothesis** of the original bacterial genome, it looks to improve the strength of our hypothesis by finding a consensus amongst different assemblers and subsets of the entire read set. In doing so, we should be better able to identify large-scale assembly errors.
 
-```{r pyramid, fig.alt = "pie chart illusion of a pyramid", fig.cap = "Sun arise each and every morning"}
-pie(
-  c(Sky = 78, "Sunny side of pyramid" = 17, "Shady side of pyramid" = 5), 
-  init.angle = 315, 
-  col = c("deepskyblue", "yellow", "yellow3"), 
-  border = FALSE
-)
-```
-
-Or you can use standard markdown for static figures with the following syntax:
-
-`![optional caption that appears below the figure](figure url){alt='alt text for
-accessibility purposes'}`
-
-![Overview of IS - reproduced from 10.1128/spectrum.02112-21](https://www.ncbi.nlm.nih.gov/pmc/articles/instance/9241782/bin/spectrum.02112-21-f007.jpg){alt='Insertion Sequences'}
-
-::::::::::::::::::::::::::::::::::::: callout
-
-Callout sections can highlight information.
-
-They are sometimes used to emphasise particularly important points
-but are also used in some lessons to present "asides": 
-content that is not central to the narrative of the lesson,
-e.g. by providing the answer to a commonly-asked question.
-
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+## Enough theory, time for a demo / code-along
 
-## Math
-
-One of our episodes contains $\LaTeX$ equations when describing how to create
-dynamic reports with {knitr}, so we now use mathjax to describe this:
-
-`$\alpha = \dfrac{1}{(1 - \beta)^2}$` becomes: $\alpha = \dfrac{1}{(1 - \beta)^2}$
-
-Cool, right?
+Now that we have had a whistle-stop tour of bacterial genome assebmly, we will use Trycycler on some real world data!
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- Use `.md` files for episodes when you want static content
-- Use `.Rmd` files for episodes when you need to generate output
-- Run `sandpaper::check_lesson()` to identify any issues with your lesson
-- Run `sandpaper::build_lesson()` to preview your lesson locally
+- Illumina short-read sequencing is accurate but cannot produce complete bacterial genomes
+- ONT long-read sequencing is less accurate, but can resolve gaps and repeats 
+- No assembler is perfect, but Trycycler lets you find the best consensus
+- Long-read-first assemblies can be improved with short-read polishing
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
