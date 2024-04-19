@@ -315,17 +315,9 @@ resulting in fragmented draft assemblies. Furthermore, dynamic genome
 elements (such as ICE elements, IS) are often themselves repetitive,
 meaning that their true biological presence is not reflected in the
 draft assembly.</p>
-<ol style="list-style-type: decimal">
-<li>
-<code>questions</code> are displayed at the beginning of the episode
-to prime the learner for the content.</li>
-<li>
-<code>objectives</code> are the learning objectives for an episode
-displayed with the questions.</li>
-<li>
-<code>keypoints</code> are displayed at the end of the episode to
-reinforce the objectives.</li>
-</ol>
+<p>One of the <code>objectives</code> of this short training is to
+become familiar with bacterial genomic elements which can be challenging
+to assemble, and some examples follow.</p>
 <div id="insertion-sequences" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -346,7 +338,7 @@ levels.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show more</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <figure><img src="https://www.ncbi.nlm.nih.gov/pmc/articles/instance/9241782/bin/spectrum.02112-21-f007.jpg" alt="Insertion Sequences" class="figure mx-auto d-block"><div class="figcaption">Overview of IS - reproduced from
 10.1128/spectrum.02112-21</div>
@@ -375,7 +367,7 @@ members (Enterobacterial Repetitive Intergenic Consensus).</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show more</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <figure><img src="https://d3i71xaburhd42.cloudfront.net/9d601ea51726a3257a80ba2f7cc9f98c4a569397/2-Figure1-1.png" alt="Examples of rep sequences" class="figure mx-auto d-block"><div class="figcaption">Overview of rep sequences - reproduced from
 10.1111/1574-6976.12036</div>
@@ -404,7 +396,7 @@ excise through site-specific recombination.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show more</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <figure><img src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1007%2Fs10142-022-00903-2/MediaObjects/10142_2022_903_Fig2_HTML.png?as=webp" alt="ICEs" class="figure mx-auto d-block"><div class="figcaption">Overview of ICE structure - reproduced from
 10.1007/s10142-022-00903-2</div>
@@ -424,17 +416,30 @@ short contigs generated from Illumina data. Improvements in yield and
 accuracy of ONT data has caused a gradual shift in the field to
 “long-read-first” pipelines, using short reads only for the polishing of
 long-read assemblies.</p>
-<figure><img src="https://www.researchgate.net/publication/368938787/figure/fig1/AS:11431281124501087@1677968652785/Illustrated-overview-of-our-recommended-approach-to-perfect-bacterial-whole-genome.png" alt="Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing" class="figure mx-auto d-block"><div class="figcaption">Assembling the perfect bacterial genome using
-Oxford Nanopore and Illumina sequencing - reproduced from
-10.1371/journal.pcbi.1010905</div>
-</figure></section><section id="overview-of-trycycler"><h2 class="section-heading">Overview of Trycycler<a class="anchor" aria-label="anchor" href="#overview-of-trycycler"></a>
+<div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout1"></a>
+</h3>
+<div class="callout-content">
+<p>An example of a long-read-first assembly pipeline: <img src="https://www.researchgate.net/publication/368938787/figure/fig1/AS:11431281124501087@1677968652785/Illustrated-overview-of-our-recommended-approach-to-perfect-bacterial-whole-genome.png" alt="Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing" class="figure"></p>
+</div>
+</div>
+</div>
+</section><section id="overview-of-trycycler"><h2 class="section-heading">Overview of Trycycler<a class="anchor" aria-label="anchor" href="#overview-of-trycycler"></a>
 </h2>
 <hr class="half-width">
 <p>Bacterial genome assembly remains an open problem - Torsten Seeman,
 author of several important bioinformatic tools like Prokka, Snippy,
 immortalises this concept in the stdout of his assembly pipeline
 Shovill: “Remember, an assembly is just a <strong>hypothesis</strong> of
-the original sequences”!</p>
+the original sequences”! There are other software packages and pipelines
+which can completely automate the assembly process, such as Hybracter
+(). Trycycler is deterministic and requires manual intervention at
+different points. So one of the first <code>questions</code> could be:
+why dedicate extra time to a Trycycler assembly?</p>
 <div id="circular-chromosome---end-of-story" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -456,7 +461,7 @@ orientations.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4">Show more</h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <figure><img src="https://journals.plos.org/ploscompbiol/article/figure/image?size=large&amp;id=10.1371/journal.pcbi.1010905.g002" alt="Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing" class="figure mx-auto d-block"><div class="figcaption">Assembling the perfect bacterial genome using
 Oxford Nanopore and Illumina sequencing - reproduced from
@@ -489,7 +494,8 @@ should be better able to identify large-scale assembly errors.</p>
 </h2>
 <hr class="half-width">
 <p>Now that we have had a whistle-stop tour of bacterial genome
-assebmly, we will use Trycycler on some real world data!</p>
+assebmly, we will use Trycycler on some real world data! Let’s review
+the <code>keypoints</code>:</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
