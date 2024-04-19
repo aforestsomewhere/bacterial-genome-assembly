@@ -48,13 +48,9 @@ associated with the lessons. They appear in the "Instructor View"
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
-## Challenge 1: Can you do it?
+## Insertion sequences
 
-What is the output of this command?
-
-```r
-paste("This", "new", "lesson", "looks", "good")
-```
+Insertion sequences are short genomic elements which are frequently found in bacterial genomes. They can shape genomes by moving around, with the potential to generate deletions and influence gene expression levels.
 
 :::::::::::::::::::::::: solution 
 
@@ -94,7 +90,7 @@ Or you can use standard markdown for static figures with the following syntax:
 `![optional caption that appears below the figure](figure url){alt='alt text for
 accessibility purposes'}`
 
-![You belong in The Carpentries!](https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg){alt='Blue Carpentries hex person logo with no text.'}
+![Overview of IS - reproduced from 10.1128/spectrum.02112-21](https://www.ncbi.nlm.nih.gov/pmc/articles/instance/9241782/bin/spectrum.02112-21-f007.jpg){alt='Insertion Sequences'}
 
 ::::::::::::::::::::::::::::::::::::: callout
 
