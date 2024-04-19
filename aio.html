@@ -250,7 +250,7 @@
         
 <section id="aio-introduction"><p>Content from <a href="introduction.html">Bacterial Genome Assembly using Trycycler</a></p>
 <hr>
-<p>Last updated on 2024-04-18 |
+<p>Last updated on 2024-04-19 |
         
         <a href="https://github.com/carpentries/workbench-template-rmd/edit/main/episodes/introduction.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -286,8 +286,24 @@ genomes?</li>
 <section id="introduction"><h2 class="section-heading">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
 <hr class="half-width">
-<p>What you need to know is that there are three sections required for a
-valid Carpentries lesson template:</p>
+<p>Bacterial genomes are extremely dynamic, undergoing frequent loss and
+gain of both chromosomal and extrachromosomal elements [1] including: *
+insertion sequences * rep sequences * ICE elements * plasmids</p>
+<p>This can be particularly interesting to food microbiologists in the
+context of adaptations to dynamic niches during food fermentations. In
+order to detect and characterise this kind of genomic plasticity, we
+require high quality bacterial genome assemblies which are both:</p>
+<ul>
+<li>Complete - fully contiguous</li>
+<li>Accurate - fully match the actual DNA sequence of the organism</li>
+</ul>
+<p>Short-read sequencing (e.g. Illumina) provides high-quality reads
+which provide for accurate assemblies. The short length of reads
+(100-300bp) impedes assembly however, particularly at repetitive
+regions. This results in fragmented draft assemblies split up into
+several contigs. Furthermore, dynamic genome elements (such as ICE
+elements, IS) are often themselves repetitive, meaning that their true
+biological presence is not reflected in the draft assembly.</p>
 <ol style="list-style-type: decimal">
 <li>
 <code>questions</code> are displayed at the beginning of the episode
@@ -322,7 +338,7 @@ reinforce the objectives.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Output</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -351,7 +367,7 @@ challenge blocks?<a class="anchor" aria-label="anchor" href="#challenge-2-how-do
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>You can add a line with at least three colons and a
 <code>solution</code> tag.</p>
@@ -477,8 +493,8 @@ any links that you are not going to use.
   "url": "https://carpentries.github.io/workbench-template-rmd/aio.html",
   "identifier": "https://carpentries.github.io/workbench-template-rmd/aio.html",
   "dateCreated": "2024-04-18",
-  "dateModified": "2024-04-18",
-  "datePublished": "2024-04-18"
+  "dateModified": "2024-04-19",
+  "datePublished": "2024-04-19"
 }
 
   </script><script>
