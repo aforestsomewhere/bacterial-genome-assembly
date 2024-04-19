@@ -2,7 +2,7 @@
 title: Setup
 ---
 
-We will be working on the Migale cluster (https://migale.inrae.fr/). If you haven't already, please request an account (https://migale.inrae.fr/ask-account) or let us know.
+We will be working on the Migale cluster (https://migale.inrae.fr/). If you haven't already, please request an account (https://migale.inrae.fr/ask-account).
 
 
 ## Data
@@ -34,7 +34,7 @@ You firstly need to connect to the `front` server of the Migale cluster using th
 
 ### Windows
 
-Use an SSH client like MobaXterm to create a new session. Enter 'front.migale.inrae.fr' as the remote host, tick the box to specify username and enter your provided login. Enter your password when prompted.
+Use an SSH client like MobaXterm to create a new session. Enter 'front.migale.inrae.fr' as the remote host, tick the box to specify username and enter your login username sent by email. Enter your provided password when prompted (copy and paste may not work, so please type it manually). You may have issues to connect when logged into a corporate VPN, try disconnecting and then establishing the SSH session. Note that after 6 incorrect login attempts your account is temporarily banned for 10 mins - so let us know if you are having issues to connect!
 
 ::::::::::::::::::::::::
 
