@@ -72,11 +72,12 @@ Note: this is by far from the only possible pipeline and does not include, for e
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Overview of Trycycler
-
 Bacterial genome assembly remains an open problem - Torsten Seeman, immortalises this concept in the stdout of his assembly pipeline Shovill: "Remember, an assembly is just a **hypothesis** of the original sequences"! 
 
 Other pipelines exist which completely automate the assembly process, such as Hybracter (https://github.com/gbouras13/hybracter) or Dragonflye (https://github.com/rpetit3/dragonflye). Trycycler on the other hand is deterministic and requires manual intervention at different points. So, one of the obvious `questions` could be: why dedicate extra time to using Trycycler?
+
+## Overview of Trycycler
+
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
@@ -101,20 +102,12 @@ Trycycler is a tool developed by Ryan Wick and colleagues to address an issue th
 
 Keeping with the idea that any assembly is a **hypothesis** of the original bacterial genome, Trycycler looks to improve the strength of our **hypothesis** by finding a consensus amongst different assemblers and subsets of the entire read set. In doing so, we should be better able to identify and correct large-scale assembly errors. 
 
-It is important to remember that Trycycler assemblies are still unlikely to be perfect, and will frequently contain "homopolymer errors" - however these can be corrected by long-read and particularly short-read polishing (there is debate on how much polishing is helpful - for further reading see Ryan Wick's blog post: https://rrwick.github.io/2023/11/06/accuracy-vs-depth-update.html).
-
 ![Overview of the Trycycler long-read assembly pipeline - reproduced from 10.1186/s13059-021-02483-z](https://www.researchgate.net/publication/354593531/figure/fig1/AS:1068171633106963@1631683371578/Overview-of-the-Trycycler-long-read-assembly-pipeline-Before-Trycycler-is-run-the-user.png){alt='Overview of the Trycycler long-read assembly pipeline'}
 
+It is important to remember that Trycycler assemblies are still unlikely to be perfect, and will frequently contain "homopolymer errors" - however these can be corrected by long-read and particularly short-read polishing (there is debate on how much polishing is helpful - for further reading see Ryan Wick's blog post: https://rrwick.github.io/2023/11/06/accuracy-vs-depth-update.html).
+
 ::::::::::::::::::::::::::::::::::::: challenge 
-## A more detailed look at the Trycycler process:
-Steps in the Trycycler pipeline:
-Step 1: Generating assemblies
-Step 2: Clustering contigs
-Step 3: Reconciling contigs
-Step 4: Multiple sequence alignment
-Step 5: Partitioning reads
-Step 6: Generating a consensus
-Step 7: Polishing after Trycycler
+## A more detailed look at the Trycycler process
 :::::::::::::::::::::::: solution 
 ![Illustrated pipeline overview - reproduced from https://github.com/rrwick/Trycycler/wiki/](https://github.com/rrwick/Trycycler/wiki/images/pipeline.png){alt='Illustrated pipeline overview'}
 :::::::::::::::::::::::::::::::::
