@@ -32,12 +32,6 @@ This can be particularly interesting to food microbiologists in the context of a
 * Complete - one contig per replicon
 * Accurate - fully match the actual DNA sequence of the organism
 
-
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
-
-Inline instructor notes can help inform instructors of timing challenges
-associated with the lessons. They appear in the "Instructor View"
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: challenge 
