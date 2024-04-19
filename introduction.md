@@ -19,16 +19,20 @@ exercises: 2
 
 ## Introduction
 
-Bacterial genomes are extremely dynamic, undergoing frequent loss and gain of both chromosomal and extrachromosomal elements [1] including:
+Bacterial genomes are dynamic landscapes. They may frequently lose and gain both chromosomal and extrachromosomal elements [1] including:
+
 * insertion sequences
 * rep sequences
 * ICE elements
 * plasmids
+* prophage
 
-This can be particularly interesting to food microbiologists in the context of adaptations to dynamic niches during food fermentations. In order to detect and characterise this kind of genomic plasticity, we require high quality bacterial genome assemblies which are both:
+This can be particularly interesting to food microbiologists in the context of adaptations to dynamic niches - such as during food fermentations. In order to detect and characterise this kind of genomic plasticity, we require high quality bacterial genome assemblies which are both:
 
-* Complete - fully contiguous
+* Complete - one contig per replicon
 * Accurate - fully match the actual DNA sequence of the organism
+
+Short-read sequencing (e.g. Illumina) generates highly accurate reads, but the short length of reads (100-300bp) hinders assembly, particularly at repetitive regions highlighted above (IS, ICE, REP), resulting in fragmented draft assemblies. Furthermore, dynamic genome elements (such as ICE elements, IS) are often themselves repetitive, meaning that their true biological presence is not reflected in the draft assembly.
 
 Short-read sequencing (e.g. Illumina) provides high-quality reads which provide for accurate assemblies. The short length of reads (100-300bp) impedes assembly however, particularly at repetitive regions. This results in fragmented draft assemblies split up into several contigs. Furthermore, dynamic genome elements (such as ICE elements, IS) are often themselves repetitive, meaning that their true biological presence is not reflected in the draft assembly.
 
@@ -48,83 +52,84 @@ associated with the lessons. They appear in the "Instructor View"
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
-## Insertion sequences
+## Insertion sequences?
 
 Insertion sequences are short genomic elements which are frequently found in bacterial genomes. They can shape genomes by moving around, with the potential to generate deletions and influence gene expression levels.
 
 :::::::::::::::::::::::: solution 
 
-## Output
+## Show more
  
-```output
-[1] "This new lesson looks good"
-```
-
+![Overview of IS - reproduced from 10.1128/spectrum.02112-21](https://www.ncbi.nlm.nih.gov/pmc/articles/instance/9241782/bin/spectrum.02112-21-f007.jpg){alt='Insertion Sequences'}
 :::::::::::::::::::::::::::::::::
 
+## REP sequences?
 
-## Challenge 2: how do you nest solutions within challenge blocks?
+REP sequences are genomic regions containing highly repetitive and palindromic sequences. They are often located in the the extragenic space of some bacterial genomes e.g. ERIC sequences in Enterobacterales members (Enterobacterial Repetitive Intergenic Consensus).
+:::::::::::::::::::::::: solution 
+
+## Show more
+
+![Overview of rep sequences - reproduced from 10.1111/1574-6976.12036](https://d3i71xaburhd42.cloudfront.net/9d601ea51726a3257a80ba2f7cc9f98c4a569397/2-Figure1-1.png){alt='Examples of rep sequences'}
+:::::::::::::::::::::::::::::::::
+
+## ICEs
+
+Integrative and Conjugative elements are mobile genetic elements which can move between hosts and donors through conjugation. They are flanked on either side by direct repeat sequences, which allow them to excise through site-specific recombination.
 
 :::::::::::::::::::::::: solution 
 
-You can add a line with at least three colons and a `solution` tag.
+## Show more
+ 
+![Overview of ICE structure - reproduced from 10.1007/s10142-022-00903-2](https://media.springernature.com/lw685/springer-static/image/art%3A10.1007%2Fs10142-022-00903-2/MediaObjects/10142_2022_903_Fig2_HTML.png?as=webp){alt='ICEs'}
 
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Figures
+## Assembling the "perfect" bacterial genome?
 
-You can also include figures generated from R Markdown:
+Hybrid bacterial whole-genome assembly combines the accuracy of short reads with the additional information provided by long reads generated on Oxford Nanopore Technologies (ONT) platforms. Previous approaches used a "short-read-first" approach, only using long reads to connect short contigs generated from Illumina data. Improvements in yield and accuracy of ONT data has caused a gradual shift in the field to "long-read-first" pipelines, using short reads only for the polishing of long-read assemblies.
 
+![Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing - reproduced from 10.1371/journal.pcbi.1010905](https://journals.plos.org/ploscompbiol/article/figure/image?size=large&id=10.1371/journal.pcbi.1010905.g001){alt='Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing'}
 
-```r
-pie(
-  c(Sky = 78, "Sunny side of pyramid" = 17, "Shady side of pyramid" = 5), 
-  init.angle = 315, 
-  col = c("deepskyblue", "yellow", "yellow3"), 
-  border = FALSE
-)
-```
+## Overview of Trycycler
 
-<div class="figure" style="text-align: center">
-<img src="fig/introduction-rendered-pyramid-1.png" alt="pie chart illusion of a pyramid"  />
-<p class="caption">Sun arise each and every morning</p>
-</div>
+Bacterial genome assembly remains an open problem - Torsten Seeman, author of several important bioinformatic tools like Prokka, Snippy, immortalises this concept in the stdout of his assembly pipeline Shovill: "Remember, an assembly is just a **hypothesis** of the original sequences"! 
 
-Or you can use standard markdown for static figures with the following syntax:
+::::::::::::::::::::::::::::::::::::: challenge 
 
-`![optional caption that appears below the figure](figure url){alt='alt text for
-accessibility purposes'}`
+## Circular chromosome - end of story?
 
-![Overview of IS - reproduced from 10.1128/spectrum.02112-21](https://www.ncbi.nlm.nih.gov/pmc/articles/instance/9241782/bin/spectrum.02112-21-f007.jpg){alt='Insertion Sequences'}
+It is possible to assemble a bacterial genome and find that it is "complete" as one circular chromosome - however it could well contain a variety of errors, such as "indels" where short regions ~50bp are deleted, or missassemblies where contigs are joined in incorrect orientations.
 
-::::::::::::::::::::::::::::::::::::: callout
+:::::::::::::::::::::::: solution 
 
-Callout sections can highlight information.
+## Show more
+ 
+![Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing - reproduced from 10.1371/journal.pcbi.1010905](https://journals.plos.org/ploscompbiol/article/figure/image?size=large&id=10.1371/journal.pcbi.1010905.g002){alt='Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing'}
 
-They are sometimes used to emphasise particularly important points
-but are also used in some lessons to present "asides": 
-content that is not central to the narrative of the lesson,
-e.g. by providing the answer to a commonly-asked question.
-
+:::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+Several long-read assembly tools exist for genome assembly, each with their own strengths and tendency to generate certain assembly errors, as shown through benchmarking [2]:
 
-## Math
+* Flye: fast, accurate, has dedicated plasmid setting, high RAM usage
+* Raven: fast, low RAM usage, issues with circularisation and missing small plasmids
+* Miniasm (within Unicycler): good at achieving circularisation, but not the best at completing the chromosome
+* Canu: slow, good at recovering plasmids, tendency to produce chimeric replicons + hinder circularisation
 
-One of our episodes contains $\LaTeX$ equations when describing how to create
-dynamic reports with {knitr}, so we now use mathjax to describe this:
+Trycycler is a tool developed by Ryan Wick and colleagues to address this problem. Keeping with the idea that any assembly is a **hypothesis** of the original bacterial genome, it looks to improve the strength of our hypothesis by finding a consensus amongst different assemblers and subsets of the entire read set. In doing so, we should be better able to identify large-scale assembly errors.
 
-`$\alpha = \dfrac{1}{(1 - \beta)^2}$` becomes: $\alpha = \dfrac{1}{(1 - \beta)^2}$
+## Enough theory, time for a demo / code-along
 
-Cool, right?
+Now that we have had a whistle-stop tour of bacterial genome assebmly, we will use Trycycler on some real world data!
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- Use `.md` files for episodes when you want static content
-- Use `.Rmd` files for episodes when you need to generate output
-- Run `sandpaper::check_lesson()` to identify any issues with your lesson
-- Run `sandpaper::build_lesson()` to preview your lesson locally
+- Illumina short-read sequencing is accurate but cannot produce complete bacterial genomes
+- ONT long-read sequencing is less accurate, but can resolve gaps and repeats 
+- No assembler is perfect, but Trycycler lets you find the best consensus
+- Long-read-first assemblies can be improved with short-read polishing
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
