@@ -73,7 +73,9 @@ Integrative and Conjugative elements are mobile genetic elements which can move 
 
 Short-read sequencing (e.g. Illumina) generates highly accurate reads, but the short length of reads (100-300bp) hinders assembly, particularly at repetitive regions highlighted above (IS, ICE, REP), resulting in fragmented draft assemblies. Furthermore, dynamic genome elements (such as ICE elements, IS) are often themselves repetitive, meaning that their true biological presence is not reflected in the draft assembly.
 
+:::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
+
 ## Assembling the "perfect" bacterial genome?
 
 Hybrid bacterial whole-genome assembly combines the accuracy of short reads with the additional information provided by long reads generated on Oxford Nanopore Technologies (ONT) platforms. Previous approaches used a "short-read-first" approach, only using long reads to connect short contigs generated from Illumina data. Improvements in yield and accuracy of ONT data has caused a gradual shift in the field to "long-read-first" pipelines, using short reads only for the polishing of long-read assemblies.
@@ -97,6 +99,7 @@ It is possible to assemble a bacterial genome and find that it is "complete" as 
 ![Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing - reproduced from 10.1371/journal.pcbi.1010905](https://journals.plos.org/ploscompbiol/article/figure/image?size=large&id=10.1371/journal.pcbi.1010905.g002){alt='Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing'}
 
 :::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 Several long-read assembly tools exist for genome assembly, each with their own strengths and tendency to generate certain assembly errors, as shown through benchmarking [2]:
 
@@ -106,8 +109,6 @@ Several long-read assembly tools exist for genome assembly, each with their own 
 * Canu: slow, good at recovering plasmids, tendency to produce chimeric replicons + hinder circularisation
 
 Trycycler is a tool developed by Ryan Wick and colleagues to address this problem. Keeping with the idea that any assembly is a **hypothesis** of the original bacterial genome, it looks to improve the strength of our hypothesis by finding a consensus amongst different assemblers and subsets of the entire read set. In doing so, we should be better able to identify large-scale assembly errors.
-
-::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Enough theory, time for a demo / code-along
 
