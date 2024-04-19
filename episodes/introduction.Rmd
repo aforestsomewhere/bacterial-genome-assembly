@@ -29,10 +29,9 @@ Bacterial genomes are extremely dynamic, undergoing frequent loss and gain of bo
 
 This can be particularly interesting to food microbiologists in the context of adaptations to dynamic niches during food fermentations. In order to detect and characterise this kind of genomic plasticity, we require high quality bacterial genome assemblies which are both:
 
-* Complete - fully contiguous
+* Complete - one contig per replicon
 * Accurate - fully match the actual DNA sequence of the organism
 
-Short-read sequencing (e.g. Illumina) provides high-quality reads which provide for accurate assemblies. The short length of reads (100-300bp) impedes assembly however, particularly at repetitive regions. This results in fragmented draft assemblies split up into several contigs. Furthermore, dynamic genome elements (such as ICE elements, IS) are often themselves repetitive, meaning that their true biological presence is not reflected in the draft assembly.
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 
@@ -76,12 +75,19 @@ Integrative and Conjugative elements are mobile genetic elements which can move 
  
 ![Overview of ICE structure - reproduced from 10.1007/s10142-022-00903-2](https://media.springernature.com/lw685/springer-static/image/art%3A10.1007%2Fs10142-022-00903-2/MediaObjects/10142_2022_903_Fig2_HTML.png?as=webp){alt='ICEs'}
 
+Short-read sequencing (e.g. Illumina) generates highly accurate reads, but the short length of reads (100-300bp) hinders assembly, particularly at repetitive regions highlighted above (IS, ICE, REP), resulting in fragmented draft assemblies. Furthermore, dynamic genome elements (such as ICE elements, IS) are often themselves repetitive, meaning that their true biological presence is not reflected in the draft assembly.
+
 :::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
+## Assembling the "perfect" bacterial genome?
 
-## Figures
+Hybrid bacterial whole-genome assembly combines the accuracy of short reads with the additional information provided by long reads generated on Oxford Nanopore Technologies (ONT) platforms. Previous approaches used a "short-read-first" approach, only using long reads to connect short contigs generated from Illumina data. Improvements in yield and accuracy of ONT data has caused a gradual shift in the field to "long-read-first" pipelines, using short reads only for the polishing of long-read assemblies.
+
+![Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing - reproduced from 10.1371/journal.pcbi.1010905](https://journals.plos.org/ploscompbiol/article/figure/image?size=large&id=10.1371/journal.pcbi.1010905.g001){alt='Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing'}
+
+## Overview of Trycycler
 
 You can also include figures generated from R Markdown:
 
