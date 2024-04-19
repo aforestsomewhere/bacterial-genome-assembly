@@ -34,12 +34,7 @@ This can be particularly interesting to food microbiologists in the context of a
 
 Short-read sequencing (e.g. Illumina) generates highly accurate reads, but the short length of reads (100-300bp) hinders assembly, particularly at repetitive regions highlighted above (IS, ICE, REP), resulting in fragmented draft assemblies. Furthermore, dynamic genome elements (such as ICE elements, IS) are often themselves repetitive, meaning that their true biological presence is not reflected in the draft assembly.
 
-1. `questions` are displayed at the beginning of the episode to prime the
-    learner for the content.
-2. `objectives` are the learning objectives for an episode displayed with
-    the questions.
-3. `keypoints` are displayed at the end of the episode to reinforce the
-    objectives.
+One of the `objectives` of this short training is to become familiar with bacterial genomic elements which can be challenging to assemble, and some examples follow.
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
@@ -83,11 +78,13 @@ Integrative and Conjugative elements are mobile genetic elements which can move 
 
 Hybrid bacterial whole-genome assembly combines the accuracy of short reads with the additional information provided by long reads generated on Oxford Nanopore Technologies (ONT) platforms. Previous approaches used a "short-read-first" approach, only using long reads to connect short contigs generated from Illumina data. Improvements in yield and accuracy of ONT data has caused a gradual shift in the field to "long-read-first" pipelines, using short reads only for the polishing of long-read assemblies.
 
+::::::::::::::::::::::::::::::::::::: callout
+An example of a long-read-first assembly pipeline:
 ![Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing - reproduced from 10.1371/journal.pcbi.1010905](https://www.researchgate.net/publication/368938787/figure/fig1/AS:11431281124501087@1677968652785/Illustrated-overview-of-our-recommended-approach-to-perfect-bacterial-whole-genome.png){alt='Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing'}
-
+::::::::::::::::::::::::::::::::::::::::::::::::
 ## Overview of Trycycler
 
-Bacterial genome assembly remains an open problem - Torsten Seeman, author of several important bioinformatic tools like Prokka, Snippy, immortalises this concept in the stdout of his assembly pipeline Shovill: "Remember, an assembly is just a **hypothesis** of the original sequences"! 
+Bacterial genome assembly remains an open problem - Torsten Seeman, author of several important bioinformatic tools like Prokka, Snippy, immortalises this concept in the stdout of his assembly pipeline Shovill: "Remember, an assembly is just a **hypothesis** of the original sequences"! There are other software packages and pipelines which can completely automate the assembly process, such as Hybracter (). Trycycler is deterministic and requires manual intervention at different points. So one of the first `questions` could be: why dedicate extra time to a Trycycler assembly?
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
@@ -115,7 +112,7 @@ Trycycler is a tool developed by Ryan Wick and colleagues to address this proble
 
 ## Enough theory, time for a demo / code-along
 
-Now that we have had a whistle-stop tour of bacterial genome assebmly, we will use Trycycler on some real world data!
+Now that we have had a whistle-stop tour of bacterial genome assebmly, we will use Trycycler on some real world data! Let's review the `keypoints`:
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
