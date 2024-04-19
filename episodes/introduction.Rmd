@@ -20,10 +20,12 @@ exercises: 2
 ## Introduction
 
 Bacterial genomes are extremely dynamic, undergoing frequent loss and gain of both chromosomal and extrachromosomal elements [1] including:
+
 * insertion sequences
 * rep sequences
 * ICE elements
 * plasmids
+* prophage
 
 This can be particularly interesting to food microbiologists in the context of adaptations to dynamic niches during food fermentations. In order to detect and characterise this kind of genomic plasticity, we require high quality bacterial genome assemblies which are both:
 
@@ -31,13 +33,6 @@ This can be particularly interesting to food microbiologists in the context of a
 * Accurate - fully match the actual DNA sequence of the organism
 
 Short-read sequencing (e.g. Illumina) provides high-quality reads which provide for accurate assemblies. The short length of reads (100-300bp) impedes assembly however, particularly at repetitive regions. This results in fragmented draft assemblies split up into several contigs. Furthermore, dynamic genome elements (such as ICE elements, IS) are often themselves repetitive, meaning that their true biological presence is not reflected in the draft assembly.
-
- 1. `questions` are displayed at the beginning of the episode to prime the
-    learner for the content.
- 2. `objectives` are the learning objectives for an episode displayed with
-    the questions.
- 3. `keypoints` are displayed at the end of the episode to reinforce the
-    objectives.
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 
@@ -48,26 +43,40 @@ associated with the lessons. They appear in the "Instructor View"
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
-## Insertion sequences
+## Insertion sequences?
 
 Insertion sequences are short genomic elements which are frequently found in bacterial genomes. They can shape genomes by moving around, with the potential to generate deletions and influence gene expression levels.
 
 :::::::::::::::::::::::: solution 
 
-## Output
+## Show more
  
-```output
-[1] "This new lesson looks good"
-```
+![Overview of IS - reproduced from 10.1128/spectrum.02112-21](https://www.ncbi.nlm.nih.gov/pmc/articles/instance/9241782/bin/spectrum.02112-21-f007.jpg){alt='Insertion Sequences'}
 
 :::::::::::::::::::::::::::::::::
 
+## REP sequences?
 
-## Challenge 2: how do you nest solutions within challenge blocks?
+REP sequences are genomic regions containing highly repetitive and palindromic sequences. They are often located in the the extragenic space of some bacterial genomes e.g. ERIC sequences in Enterobacterales members (Enterobacterial Repetitive Intergenic Consensus).
+:::::::::::::::::::::::: solution 
+
+## Show more
+
+![Overview of rep sequences - reproduced from 10.1111/1574-6976.12036](https://d3i71xaburhd42.cloudfront.net/9d601ea51726a3257a80ba2f7cc9f98c4a569397/2-Figure1-1.png){alt='Examples of rep sequences'}
+
+::::::::::::::::::::::::::::::::::::: challenge 
+
+## ICEs
+
+Integrative and Conjugative elements are mobile genetic elements which can move between hosts and donors through conjugation. They are flanked on either side by direct repeat sequences, which allow them to excise through site-specific recombination.
 
 :::::::::::::::::::::::: solution 
 
-You can add a line with at least three colons and a `solution` tag.
+## Show more
+ 
+![Overview of ICE structure - reproduced from 10.1007/s10142-022-00903-2](https://media.springernature.com/lw685/springer-static/image/art%3A10.1007%2Fs10142-022-00903-2/MediaObjects/10142_2022_903_Fig2_HTML.png?as=webp){alt='ICEs'}
+
+:::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
