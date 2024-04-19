@@ -6,7 +6,7 @@ exercises: 2
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- Why go to the bother of using Trycycler to assemble bacterial genomes?
+- Why use Trycycler to assemble bacterial genomes with long-read data?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -62,6 +62,8 @@ Integrative and Conjugative Elements (ICEs) are mobile genetic elements capable 
 
 ## Assembling the "perfect" bacterial genome?
 
+Bacterial genome assembly remains an open problem - Torsten Seeman, immortalises this concept in the stdout of his assembly pipeline Shovill: "Remember, an assembly is just a **hypothesis** of the original sequences"! 
+
 Hybrid bacterial whole-genome assembly combines the accuracy of short reads with the additional information provided by long reads generated on Oxford Nanopore Technologies (ONT) platforms. Previous approaches used a "short-read-first" approach, only using long reads to connect short contigs generated from Illumina data. Improvements in yield and accuracy of ONT data has caused a gradual shift in the field to "long-read-first" pipelines, using short reads only for the polishing of long-read assemblies.
 
 ::::::::::::::::::::::::::::::::::::: challenge 
@@ -72,12 +74,7 @@ Note: this is by far from the only possible pipeline and does not include, for e
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-Bacterial genome assembly remains an open problem - Torsten Seeman, immortalises this concept in the stdout of his assembly pipeline Shovill: "Remember, an assembly is just a **hypothesis** of the original sequences"! 
-
-Other pipelines exist which completely automate the assembly process, such as Hybracter (https://github.com/gbouras13/hybracter) or Dragonflye (https://github.com/rpetit3/dragonflye). Trycycler on the other hand is deterministic and requires manual intervention at different points. So, one of the obvious `questions` could be: why dedicate extra time to using Trycycler?
-
-## Overview of Trycycler
-
+Other pipelines exist which completely automate the long-read assembly process, such as Hybracter (https://github.com/gbouras13/hybracter) or Dragonflye (https://github.com/rpetit3/dragonflye). Trycycler on the other hand is deterministic and requires manual intervention at different points. So, one of the obvious `questions` could be: why dedicate extra time to using Trycycler?
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
@@ -93,6 +90,9 @@ It is possible to assemble a bacterial genome and find that it is "closed" as on
 
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Overview of Trycycler
+
 Trycycler is a tool developed by Ryan Wick and colleagues to address an issue they had uncovered in previous benchmarking work. Several long-read assembly tools exist for genome assembly, each with their own strengths and tendency to generate certain assembly errors, for example:
 
 * Flye: fast, accurate, has dedicated plasmid setting, high RAM usage
@@ -102,7 +102,7 @@ Trycycler is a tool developed by Ryan Wick and colleagues to address an issue th
 
 Keeping with the idea that any assembly is a **hypothesis** of the original bacterial genome, Trycycler looks to improve the strength of our **hypothesis** by finding a consensus amongst different assemblers and subsets of the entire read set. In doing so, we should be better able to identify and correct large-scale assembly errors. 
 
-![Overview of the Trycycler long-read assembly pipeline - reproduced from 10.1186/s13059-021-02483-z](https://www.researchgate.net/publication/354593531/figure/fig1/AS:1068171633106963@1631683371578/Overview-of-the-Trycycler-long-read-assembly-pipeline-Before-Trycycler-is-run-the-user.png){alt='Overview of the Trycycler long-read assembly pipeline'}
+![Overview of the Trycycler long-read assembly pipeline - reproduced from Wick et al (2021)](https://www.researchgate.net/publication/354593531/figure/fig1/AS:1068171633106963@1631683371578/Overview-of-the-Trycycler-long-read-assembly-pipeline-Before-Trycycler-is-run-the-user.png){alt='Overview of the Trycycler long-read assembly pipeline'}
 
 It is important to remember that Trycycler assemblies are still unlikely to be perfect, and will frequently contain "homopolymer errors" - however these can be corrected by long-read and particularly short-read polishing (there is debate on how much polishing is helpful - for further reading see Ryan Wick's blog post: https://rrwick.github.io/2023/11/06/accuracy-vs-depth-update.html).
 
@@ -113,7 +113,7 @@ It is important to remember that Trycycler assemblies are still unlikely to be p
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Enough theory, time for a demo / code-along!
+## Enough theory, time for a demo!
 
 Now that we have had a whistle-stop tour of bacterial genome assebmly, we will use Trycycler on some real world data!
 
