@@ -34,21 +34,12 @@ This can be particularly interesting to food microbiologists in the context of a
 
 Short-read sequencing (e.g. Illumina) generates highly accurate reads, but the short length of reads (100-300bp) hinders assembly, particularly at repetitive regions highlighted above (IS, ICE, REP), resulting in fragmented draft assemblies. Furthermore, dynamic genome elements (such as ICE elements, IS) are often themselves repetitive, meaning that their true biological presence is not reflected in the draft assembly.
 
-Short-read sequencing (e.g. Illumina) provides high-quality reads which provide for accurate assemblies. The short length of reads (100-300bp) impedes assembly however, particularly at repetitive regions. This results in fragmented draft assemblies split up into several contigs. Furthermore, dynamic genome elements (such as ICE elements, IS) are often themselves repetitive, meaning that their true biological presence is not reflected in the draft assembly.
-
- 1. `questions` are displayed at the beginning of the episode to prime the
+1. `questions` are displayed at the beginning of the episode to prime the
     learner for the content.
- 2. `objectives` are the learning objectives for an episode displayed with
+2. `objectives` are the learning objectives for an episode displayed with
     the questions.
- 3. `keypoints` are displayed at the end of the episode to reinforce the
+3. `keypoints` are displayed at the end of the episode to reinforce the
     objectives.
-
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
-
-Inline instructor notes can help inform instructors of timing challenges
-associated with the lessons. They appear in the "Instructor View"
-
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
@@ -61,17 +52,19 @@ Insertion sequences are short genomic elements which are frequently found in bac
 ## Show more
  
 ![Overview of IS - reproduced from 10.1128/spectrum.02112-21](https://www.ncbi.nlm.nih.gov/pmc/articles/instance/9241782/bin/spectrum.02112-21-f007.jpg){alt='Insertion Sequences'}
-:::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::
 
 ## REP sequences?
 
 REP sequences are genomic regions containing highly repetitive and palindromic sequences. They are often located in the the extragenic space of some bacterial genomes e.g. ERIC sequences in Enterobacterales members (Enterobacterial Repetitive Intergenic Consensus).
+
 :::::::::::::::::::::::: solution 
 
 ## Show more
 
 ![Overview of rep sequences - reproduced from 10.1111/1574-6976.12036](https://d3i71xaburhd42.cloudfront.net/9d601ea51726a3257a80ba2f7cc9f98c4a569397/2-Figure1-1.png){alt='Examples of rep sequences'}
-:::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::
 
 ## ICEs
 
@@ -90,7 +83,7 @@ Integrative and Conjugative elements are mobile genetic elements which can move 
 
 Hybrid bacterial whole-genome assembly combines the accuracy of short reads with the additional information provided by long reads generated on Oxford Nanopore Technologies (ONT) platforms. Previous approaches used a "short-read-first" approach, only using long reads to connect short contigs generated from Illumina data. Improvements in yield and accuracy of ONT data has caused a gradual shift in the field to "long-read-first" pipelines, using short reads only for the polishing of long-read assemblies.
 
-![Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing - reproduced from 10.1371/journal.pcbi.1010905](https://journals.plos.org/ploscompbiol/article/figure/image?size=large&id=10.1371/journal.pcbi.1010905.g001){alt='Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing'}
+![Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing - reproduced from 10.1371/journal.pcbi.1010905](https://www.researchgate.net/publication/368938787/figure/fig1/AS:11431281124501087@1677968652785/Illustrated-overview-of-our-recommended-approach-to-perfect-bacterial-whole-genome.png){alt='Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing'}
 
 ## Overview of Trycycler
 
