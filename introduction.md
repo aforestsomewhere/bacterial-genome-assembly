@@ -19,28 +19,22 @@ exercises: 2
 
 ## Introduction
 
-Bacterial genomes are dynamic landscapes. They may frequently lose and gain both chromosomal and extrachromosomal elements [1] including:
+Bacterial genomes are dynamic landscapes. They may frequently lose and gain both chromosomal and extrachromosomal elements such as insertion sequences (IS), REP sequences, ICE elements, plasmids and prophage.
 
-* insertion sequences
-* rep sequences
-* ICE elements
-* plasmids
-* prophage
-
-This can be particularly interesting to food microbiologists in the context of adaptations to dynamic niches - such as during food fermentations. In order to detect and characterise this kind of genomic plasticity, we require high quality bacterial genome assemblies which are both:
+This can be particularly interesting to food microbiologists in the context of adaptations to dynamic niches - such as during food fermentations! In order to detect and characterise this kind of genomic plasticity, we require high quality bacterial genome assemblies which are both:
 
 * Complete - one contig per replicon
 * Accurate - fully match the actual DNA sequence of the organism
 
-Short-read sequencing (e.g. Illumina) generates highly accurate reads, but the short length of reads (100-300bp) hinders assembly, particularly at repetitive regions highlighted above (IS, ICE, REP), resulting in fragmented draft assemblies. Furthermore, dynamic genome elements (such as ICE elements, IS) are often themselves repetitive, meaning that their true biological presence is not reflected in the draft assembly.
+Short-read sequencing (e.g. Illumina) generates highly accurate reads, but the short length of reads (typically 150-300bp) cannot resolve repetitive or difficult-to-sequence regions, resulting in fragmented draft assemblies. Importantly, dynamic genome elements such as IS, REP and ICE are often themselves repetitive, meaning that their presence is not reflected in the draft assembly.
 
-One of the `objectives` of this short training is to become familiar with bacterial genomic elements which can be challenging to assemble, and some examples follow.
+One of our `objectives` is to become familiar with some common difficult-to-assemble bacterial genomic elements.
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
-## Insertion sequences?
+## IS
 
-Insertion sequences are short genomic elements which are frequently found in bacterial genomes. They can shape genomes by moving around, with the potential to generate deletions and influence gene expression levels.
+Insertion sequences (IS) are short genomic elements which are frequently found in bacterial genomes. They can shape genomes as they move around, potentially introducing deletions, mutations and influencing gene expression.
 
 :::::::::::::::::::::::: solution 
 
@@ -49,9 +43,8 @@ Insertion sequences are short genomic elements which are frequently found in bac
 ![Overview of IS - reproduced from 10.1128/spectrum.02112-21](https://www.ncbi.nlm.nih.gov/pmc/articles/instance/9241782/bin/spectrum.02112-21-f007.jpg){alt='Insertion Sequences'}
 :::::::::::::::::::::::::::::::::::::
 
-## REP sequences?
-
-REP sequences are genomic regions containing highly repetitive and palindromic sequences. They are often located in the the extragenic space of some bacterial genomes e.g. ERIC sequences in Enterobacterales members (Enterobacterial Repetitive Intergenic Consensus).
+## REP
+REP sequences are genomic regions containing highly repetitive and palindromic sequences. They are often located in the the extragenic space of some bacterial genomes e.g. ERIC (Enterobacterial Repetitive Intergenic Consensus) sequences in the Enterobacterales.
 
 :::::::::::::::::::::::: solution 
 
@@ -63,7 +56,7 @@ REP sequences are genomic regions containing highly repetitive and palindromic s
 
 ## ICEs
 
-Integrative and Conjugative elements are mobile genetic elements which can move between hosts and donors through conjugation. They are flanked on either side by direct repeat sequences, which allow them to excise through site-specific recombination.
+Integrative and Conjugative Elements (ICEs) are mobile genetic elements capable of moving between hosts and donors through conjugation. They are flanked on either side by direct repeat sequences, which allow them to excise via site-specific recombination.
 
 :::::::::::::::::::::::: solution 
 
@@ -78,13 +71,18 @@ Integrative and Conjugative elements are mobile genetic elements which can move 
 
 Hybrid bacterial whole-genome assembly combines the accuracy of short reads with the additional information provided by long reads generated on Oxford Nanopore Technologies (ONT) platforms. Previous approaches used a "short-read-first" approach, only using long reads to connect short contigs generated from Illumina data. Improvements in yield and accuracy of ONT data has caused a gradual shift in the field to "long-read-first" pipelines, using short reads only for the polishing of long-read assemblies.
 
-::::::::::::::::::::::::::::::::::::: callout
-An example of a long-read-first assembly pipeline:
+::::::::::::::::::::::::::::::::::::: challenge 
+## An example of a long-read-first assembly pipeline:
+:::::::::::::::::::::::: solution 
 ![Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing - reproduced from 10.1371/journal.pcbi.1010905](https://www.researchgate.net/publication/368938787/figure/fig1/AS:11431281124501087@1677968652785/Illustrated-overview-of-our-recommended-approach-to-perfect-bacterial-whole-genome.png){alt='Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing'}
+:::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
+
 ## Overview of Trycycler
 
-Bacterial genome assembly remains an open problem - Torsten Seeman, author of several important bioinformatic tools like Prokka, Snippy, immortalises this concept in the stdout of his assembly pipeline Shovill: "Remember, an assembly is just a **hypothesis** of the original sequences"! There are other software packages and pipelines which can completely automate the assembly process, such as Hybracter (). Trycycler is deterministic and requires manual intervention at different points. So one of the first `questions` could be: why dedicate extra time to a Trycycler assembly?
+Bacterial genome assembly remains an open problem - Torsten Seeman, immortalises this concept in the stdout of his assembly pipeline Shovill: "Remember, an assembly is just a **hypothesis** of the original sequences"! 
+
+Other pipelines exist which completely automate the assembly process, such as Hybracter (https://github.com/gbouras13/hybracter) or Dragonflye (https://github.com/rpetit3/dragonflye). Trycycler on the other hand is deterministic and requires manual intervention at different points. So, one of the obvious `questions` could be: why dedicate extra time to using Trycycler?
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
