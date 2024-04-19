@@ -71,9 +71,10 @@ Integrative and Conjugative Elements (ICEs) are mobile genetic elements capable 
 
 Hybrid bacterial whole-genome assembly combines the accuracy of short reads with the additional information provided by long reads generated on Oxford Nanopore Technologies (ONT) platforms. Previous approaches used a "short-read-first" approach, only using long reads to connect short contigs generated from Illumina data. Improvements in yield and accuracy of ONT data has caused a gradual shift in the field to "long-read-first" pipelines, using short reads only for the polishing of long-read assemblies.
 
-:::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::: challenge 
 An example of a long-read-first assembly pipeline:
 ![Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing - reproduced from 10.1371/journal.pcbi.1010905](https://www.researchgate.net/publication/368938787/figure/fig1/AS:11431281124501087@1677968652785/Illustrated-overview-of-our-recommended-approach-to-perfect-bacterial-whole-genome.png){alt='Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing'}
+:::::::::::::::::::::::: solution 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Overview of Trycycler
