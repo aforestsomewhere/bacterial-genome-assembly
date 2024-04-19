@@ -6,27 +6,26 @@ exercises: 2
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- Why use Trycycler to assemble bacterial genomes with long-read data?
+- How can we use Trycycler on the Migale cluster?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Understand common errors that can occur during assembly
-- Become familiar with the Trycycler approach 
+- Become familiar with the file structure and commands
+- Understand the inputs and outputs to Trycycler Reconcile
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Introduction
 
-Bacterial genomes are dynamic landscapes. They may frequently lose and gain both chromosomal and extrachromosomal elements such as insertion sequences (IS), REP sequences, ICE elements, plasmids and prophage.
+Short (Illumina NovaSeq) and long (ONT P2solo) read data has been generated for a selection of bacterial isolates. After quality control, Trycycler's "subsample" command was used to generate 3 subsamples of each readset at a minimum allowed read depth of 20x, and providing the expected genome size. Each subsample was then assembled by each assembler (Flye, Raven and Unicycler), generating a total of 9 assemblies. Trycycler "cluster" has already been run, so let's take a look at our starting data.
 
-This can be particularly interesting to food microbiologists in the context of adaptations to dynamic niches - such as during food fermentations! In order to detect and characterise this kind of genomic plasticity, we require high quality bacterial genome assemblies which are both:
+```
+ cd /save_projet/domino_wp3_isollates
+```
 
-* Complete - one contig per replicon
-* Accurate - fully match the actual DNA sequence of the organism
-
-Short-read sequencing (e.g. Illumina) generates highly accurate reads, but the short length of reads (typically 150-300bp) cannot resolve repetitive or difficult-to-sequence regions, resulting in fragmented draft assemblies. Importantly, dynamic genome elements such as IS, REP and ICE are often themselves repetitive, meaning that their presence is not reflected in the draft assembly, yet they can be quite influential on the phenotype of bacterial isolates.
+(One assembly was made for each (not-subsampled) readset using Canu).
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
