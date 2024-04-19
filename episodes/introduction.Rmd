@@ -32,8 +32,7 @@ This can be particularly interesting to food microbiologists in the context of a
 * Complete - one contig per replicon
 * Accurate - fully match the actual DNA sequence of the organism
 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
+Short-read sequencing (e.g. Illumina) generates highly accurate reads, but the short length of reads (100-300bp) hinders assembly, particularly at repetitive regions highlighted above (IS, ICE, REP), resulting in fragmented draft assemblies. Furthermore, dynamic genome elements (such as ICE elements, IS) are often themselves repetitive, meaning that their true biological presence is not reflected in the draft assembly.
 ::::::::::::::::::::::::::::::::::::: challenge 
 
 ## Insertion sequences?
@@ -45,7 +44,7 @@ Insertion sequences are short genomic elements which are frequently found in bac
 ## Show more
  
 ![Overview of IS - reproduced from 10.1128/spectrum.02112-21](https://www.ncbi.nlm.nih.gov/pmc/articles/instance/9241782/bin/spectrum.02112-21-f007.jpg){alt='Insertion Sequences'}
-
+:::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::: challenge 
 
 ## REP sequences?
@@ -56,7 +55,7 @@ REP sequences are genomic regions containing highly repetitive and palindromic s
 ## Show more
 
 ![Overview of rep sequences - reproduced from 10.1111/1574-6976.12036](https://d3i71xaburhd42.cloudfront.net/9d601ea51726a3257a80ba2f7cc9f98c4a569397/2-Figure1-1.png){alt='Examples of rep sequences'}
-
+:::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::: challenge 
 
 ## ICEs
@@ -68,10 +67,6 @@ Integrative and Conjugative elements are mobile genetic elements which can move 
 ## Show more
  
 ![Overview of ICE structure - reproduced from 10.1007/s10142-022-00903-2](https://media.springernature.com/lw685/springer-static/image/art%3A10.1007%2Fs10142-022-00903-2/MediaObjects/10142_2022_903_Fig2_HTML.png?as=webp){alt='ICEs'}
-
-:::::::::::::::::::::::::::::::::
-
-Short-read sequencing (e.g. Illumina) generates highly accurate reads, but the short length of reads (100-300bp) hinders assembly, particularly at repetitive regions highlighted above (IS, ICE, REP), resulting in fragmented draft assemblies. Furthermore, dynamic genome elements (such as ICE elements, IS) are often themselves repetitive, meaning that their true biological presence is not reflected in the draft assembly.
 
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -99,7 +94,6 @@ It is possible to assemble a bacterial genome and find that it is "complete" as 
 ![Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing - reproduced from 10.1371/journal.pcbi.1010905](https://journals.plos.org/ploscompbiol/article/figure/image?size=large&id=10.1371/journal.pcbi.1010905.g002){alt='Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing'}
 
 :::::::::::::::::::::::::::::::::
-::::::::::::::::::::::::::::::::::::::::::::::::
 
 Several long-read assembly tools exist for genome assembly, each with their own strengths and tendency to generate certain assembly errors, as shown through benchmarking [2]:
 
