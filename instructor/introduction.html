@@ -164,7 +164,6 @@
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#introduction">Introduction</a></li>
-<li><a href="#ices">ICEs</a></li>
 <li><a href="#assembling-the-perfect-bacterial-genome">Assembling the “perfect” bacterial genome?</a></li>
 <li><a href="#overview-of-trycycler">Overview of Trycycler</a></li>
 <li><a href="#enough-theory-time-for-a-demo-code-along">Enough theory, time for a demo / code-along</a></li>
@@ -293,13 +292,6 @@ resulting in fragmented draft assemblies. Furthermore, dynamic genome
 elements (such as ICE elements, IS) are often themselves repetitive,
 meaning that their true biological presence is not reflected in the
 draft assembly.</p>
-<p>Short-read sequencing (e.g. Illumina) provides high-quality reads
-which provide for accurate assemblies. The short length of reads
-(100-300bp) impedes assembly however, particularly at repetitive
-regions. This results in fragmented draft assemblies split up into
-several contigs. Furthermore, dynamic genome elements (such as ICE
-elements, IS) are often themselves repetitive, meaning that their true
-biological presence is not reflected in the draft assembly.</p>
 <ol style="list-style-type: decimal"><li>
 <code>questions</code> are displayed at the beginning of the episode
 to prime the learner for the content.</li>
@@ -309,22 +301,7 @@ displayed with the questions.</li>
 <li>
 <code>keypoints</code> are displayed at the end of the episode to
 reinforce the objectives.</li>
-</ol><div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
-  <h3 class="accordion-header" id="headingInstructor1">
-<div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div>Instructor Note</h3>
-</button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
-<div class="accordion-body">
-<p>Inline instructor notes can help inform instructors of timing
-challenges associated with the lessons. They appear in the “Instructor
-View”</p>
-</div>
-</div>
-</div>
-</div>
-<div id="insertion-sequences" class="callout challenge">
+</ol><div id="insertion-sequences" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
@@ -352,9 +329,9 @@ levels.</p>
 </div>
 </div>
 </div>
-<div id="rep-sequences" class="callout discussion">
+<div id="rep-sequences" class="callout challenge">
 <div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="rep-sequences" class="callout-inner">
 <h3 class="callout-title">REP sequences?<a class="anchor" aria-label="anchor" href="#rep-sequences"></a>
@@ -363,22 +340,10 @@ levels.</p>
 <p>REP sequences are genomic regions containing highly repetitive and
 palindromic sequences. They are often located in the the extragenic
 space of some bacterial genomes e.g. ERIC sequences in Enterobacterales
-members (Enterobacterial Repetitive Intergenic Consensus).
-:::::::::::::::::::::::: solution</p>
-<div class="section level2">
-<h2 id="show-more-1">Show more<a class="anchor" aria-label="anchor" href="#show-more-1"></a></h2>
-<figure><img src="https://d3i71xaburhd42.cloudfront.net/9d601ea51726a3257a80ba2f7cc9f98c4a569397/2-Figure1-1.png" alt="Examples of rep sequences" class="figure mx-auto d-block"><div class="figcaption">Overview of rep sequences - reproduced from
-10.1111/1574-6976.12036</div>
-</figure></div>
+members (Enterobacterial Repetitive Intergenic Consensus).</p>
 </div>
 </div>
 </div>
-</section><section id="ices"><h2 class="section-heading">ICEs<a class="anchor" aria-label="anchor" href="#ices"></a>
-</h2>
-<hr class="half-width"><p>Integrative and Conjugative elements are mobile genetic elements
-which can move between hosts and donors through conjugation. They are
-flanked on either side by direct repeat sequences, which allow them to
-excise through site-specific recombination.</p>
 <div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
@@ -386,13 +351,40 @@ excise through site-specific recombination.</p>
 </button>
 <div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
+<figure><img src="https://d3i71xaburhd42.cloudfront.net/9d601ea51726a3257a80ba2f7cc9f98c4a569397/2-Figure1-1.png" alt="Examples of rep sequences" class="figure mx-auto d-block"><div class="figcaption">Overview of rep sequences - reproduced from
+10.1111/1574-6976.12036</div>
+</figure></div>
+</div>
+</div>
+</div>
+<div id="ices" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="ices" class="callout-inner">
+<h3 class="callout-title">ICEs<a class="anchor" aria-label="anchor" href="#ices"></a>
+</h3>
+<div class="callout-content">
+<p>Integrative and Conjugative elements are mobile genetic elements
+which can move between hosts and donors through conjugation. They are
+flanked on either side by direct repeat sequences, which allow them to
+excise through site-specific recombination.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3">Show more</h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div class="accordion-body">
 <figure><img src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1007%2Fs10142-022-00903-2/MediaObjects/10142_2022_903_Fig2_HTML.png?as=webp" alt="ICEs" class="figure mx-auto d-block"><div class="figcaption">Overview of ICE structure - reproduced from
 10.1007/s10142-022-00903-2</div>
 </figure></div>
 </div>
 </div>
 </div>
-<p>::::::::::::::::::::::::::::::::::::::::::::::::</p>
 </section><section id="assembling-the-perfect-bacterial-genome"><h2 class="section-heading">Assembling the “perfect” bacterial genome?<a class="anchor" aria-label="anchor" href="#assembling-the-perfect-bacterial-genome"></a>
 </h2>
 <hr class="half-width"><p>Hybrid bacterial whole-genome assembly combines the accuracy of short
@@ -403,7 +395,7 @@ short contigs generated from Illumina data. Improvements in yield and
 accuracy of ONT data has caused a gradual shift in the field to
 “long-read-first” pipelines, using short reads only for the polishing of
 long-read assemblies.</p>
-<figure><img src="https://journals.plos.org/ploscompbiol/article/figure/image?size=large&amp;id=10.1371/journal.pcbi.1010905.g001" alt="Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing" class="figure mx-auto d-block"><div class="figcaption">Assembling the perfect bacterial genome using
+<figure><img src="https://www.researchgate.net/publication/368938787/figure/fig1/AS:11431281124501087@1677968652785/Illustrated-overview-of-our-recommended-approach-to-perfect-bacterial-whole-genome.png" alt="Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing" class="figure mx-auto d-block"><div class="figcaption">Assembling the perfect bacterial genome using
 Oxford Nanopore and Illumina sequencing - reproduced from
 10.1371/journal.pcbi.1010905</div>
 </figure></section><section id="overview-of-trycycler"><h2 class="section-heading">Overview of Trycycler<a class="anchor" aria-label="anchor" href="#overview-of-trycycler"></a>
@@ -429,12 +421,12 @@ orientations.</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
-  <h4 class="accordion-header" id="headingSolution3">Show more</h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
+  <h4 class="accordion-header" id="headingSolution4">Show more</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <figure><img src="https://journals.plos.org/ploscompbiol/article/figure/image?size=large&amp;id=10.1371/journal.pcbi.1010905.g002" alt="Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing" class="figure mx-auto d-block"><div class="figcaption">Assembling the perfect bacterial genome using
 Oxford Nanopore and Illumina sequencing - reproduced from
