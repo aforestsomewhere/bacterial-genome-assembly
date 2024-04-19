@@ -12,8 +12,8 @@ exercises: 2
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Provide examples of errors that can occur during assembly
-- Explain the approach used by Trycycler
+- Understand common errors that can occur during assembly
+- Become familiar with the Trycycler approach 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -26,9 +26,7 @@ This can be particularly interesting to food microbiologists in the context of a
 * Complete - one contig per replicon
 * Accurate - fully match the actual DNA sequence of the organism
 
-Short-read sequencing (e.g. Illumina) generates highly accurate reads, but the short length of reads (typically 150-300bp) cannot resolve repetitive or difficult-to-sequence regions, resulting in fragmented draft assemblies. Importantly, dynamic genome elements such as IS, REP and ICE are often themselves repetitive, meaning that their presence is not reflected in the draft assembly.
-
-One of our `objectives` is to become familiar with some common difficult-to-assemble bacterial genomic elements.
+Short-read sequencing (e.g. Illumina) generates highly accurate reads, but the short length of reads (typically 150-300bp) cannot resolve repetitive or difficult-to-sequence regions, resulting in fragmented draft assemblies. Importantly, dynamic genome elements such as IS, REP and ICE are often themselves repetitive, meaning that their presence is not reflected in the draft assembly, yet they can be quite influential on the phenotype of bacterial isolates.
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
@@ -86,31 +84,39 @@ Other pipelines exist which completely automate the assembly process, such as Hy
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
-## Circular chromosome - end of story?
-
-It is possible to assemble a bacterial genome and find that it is "complete" as one circular chromosome - however it could well contain a variety of errors, such as "indels" where short regions ~50bp are deleted, or missassemblies where contigs are joined in incorrect orientations.
+## Closed genomes versus accuracy
+Flye assembled one circular contig for the chromosome - isn't that enough?
 
 :::::::::::::::::::::::: solution 
 
 ## Show more
- 
+It is possible to assemble a bacterial genome and find that it is "complete" as one circular chromosome - however it could well contain a variety of errors, such as "indels" where short regions ~50bp are deleted, or missassemblies where contigs are joined in incorrect orientations.
+
 ![Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing - reproduced from 10.1371/journal.pcbi.1010905](https://journals.plos.org/ploscompbiol/article/figure/image?size=large&id=10.1371/journal.pcbi.1010905.g002){alt='Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing'}
 
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
-
-Several long-read assembly tools exist for genome assembly, each with their own strengths and tendency to generate certain assembly errors, as shown through benchmarking [2]:
+Trycycler is a tool developed by Ryan Wick and colleagues to address an issue they had uncovered in previous benchmarking work. Several long-read assembly tools exist for genome assembly, each with their own strengths and tendency to generate certain assembly errors, for example:
 
 * Flye: fast, accurate, has dedicated plasmid setting, high RAM usage
 * Raven: fast, low RAM usage, issues with circularisation and missing small plasmids
 * Miniasm (within Unicycler): good at achieving circularisation, but not the best at completing the chromosome
 * Canu: slow, good at recovering plasmids, tendency to produce chimeric replicons + hinder circularisation
 
-Trycycler is a tool developed by Ryan Wick and colleagues to address this problem. Keeping with the idea that any assembly is a **hypothesis** of the original bacterial genome, it looks to improve the strength of our hypothesis by finding a consensus amongst different assemblers and subsets of the entire read set. In doing so, we should be better able to identify large-scale assembly errors.
+Keeping with the idea that any assembly is a **hypothesis** of the original bacterial genome, Trycycler looks to improve the strength of our hypothesis by finding a consensus amongst different assemblers and subsets of the entire read set. In doing so, we should be better able to identify and correct large-scale assembly errors. It is important to remember that Trycycler consensus assemblies are unlikely to be perfect, and will frequently contain "homopolymer errors" - however these can be corrected by long-read and particularly short-read polishing (there is debate on how much polishing is helpful - for further reading see Ryan Wick's blog post: https://rrwick.github.io/2023/11/06/accuracy-vs-depth-update.html).
 
-## Enough theory, time for a demo / code-along
+![Overview of the Trycycler long-read assembly pipeline - reproduced from 10.1186/s13059-021-02483-z](https://www.researchgate.net/publication/354593531/figure/fig1/AS:1068171633106963@1631683371578/Overview-of-the-Trycycler-long-read-assembly-pipeline-Before-Trycycler-is-run-the-user.png){alt='Overview of the Trycycler long-read assembly pipeline'}
 
-Now that we have had a whistle-stop tour of bacterial genome assebmly, we will use Trycycler on some real world data! Let's review the `keypoints`:
+::::::::::::::::::::::::::::::::::::: challenge 
+## A more detailed look at the Trycycler process:
+:::::::::::::::::::::::: solution 
+![Illustrated pipeline overview - reproduced from https://github.com/rrwick/Trycycler/wiki/](https://github.com/rrwick/Trycycler/wiki/images/pipeline.png){alt='Illustrated pipeline overview'}
+:::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Enough theory, time for a demo / code-along!
+
+Now that we have had a whistle-stop tour of bacterial genome assebmly, we will use Trycycler on some real world data!
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
