@@ -350,7 +350,7 @@ influential on the phenotype of bacterial isolates.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show more</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Insertion sequences (IS) are short genomic elements which are
 frequently found in bacterial genomes. They can shape genomes as they
@@ -377,7 +377,7 @@ influencing gene expression. <img src="https://www.ncbi.nlm.nih.gov/pmc/articles
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show more</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>REP sequences are genomic regions containing highly repetitive and
 palindromic sequences. They are often located in the the extragenic
@@ -405,7 +405,7 @@ Intergenic Consensus) sequences in the Enterobacterales. <img src="https://d3i71
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show more</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>Integrative and Conjugative Elements (ICEs) are mobile genetic
 elements capable of moving between hosts and donors through conjugation.
@@ -448,7 +448,7 @@ pipeline:<a class="anchor" aria-label="anchor" href="#example-long-read-first-as
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>Note: this is by far from the only possible pipeline and does not
 include, for example, PacBio sequencing. <img src="https://www.researchgate.net/publication/368938787/figure/fig1/AS:11431281124501087@1677968652785/Illustrated-overview-of-our-recommended-approach-to-perfect-bacterial-whole-genome.png" alt="Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing" class="figure"></p>
@@ -480,7 +480,7 @@ isn’t that good enough?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5">Show more</h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p>It is possible to assemble a bacterial genome and find that it is
 “closed” as one circular chromosome - however it may not be very
@@ -544,7 +544,7 @@ process<a class="anchor" aria-label="anchor" href="#a-more-detailed-look-at-the-
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6">Show me the solution</h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <figure><img src="https://github.com/rrwick/Trycycler/wiki/images/pipeline.png" alt="Illustrated pipeline overview" class="figure mx-auto d-block"><div class="figcaption">Illustrated pipeline overview - reproduced from
 <a href="https://github.com/rrwick/Trycycler/wiki/" class="external-link uri">https://github.com/rrwick/Trycycler/wiki/</a>
@@ -732,7 +732,7 @@ renaming</div>
   <h3 class="accordion-header" id="headingSpoiler1">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Hackathon: semi-automation of cluster assessment?</h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>If you can, make a quick note of why you decided to exclude/include
 clusters on the recording sheet.</p>
@@ -814,19 +814,44 @@ manually assessed</div>
 qsub -cwd -V -N tr_test -e err/try_rec_002 -o out/try_rec_002 -pe thread 4 -b y "conda activate trycycler-0.5.4 &amp;&amp; trycycler reconcile --reads *.fastq.gz --cluster_dir trycycler/cluster_002 --threads 4 &amp;&amp; conda deactivate"</code></pre>
 <p>However, for simplicity, a bash script is provided which will detect
 the clusters present, and generate and submit a script to run Trycycler
-reconcile on each. You can run it like this:</p>
-<pre><code><span><span class="va">..</span><span class="op">/</span><span class="va">scripts</span><span class="op">/</span><span class="va">reconcile.sh</span></span></code></pre>
-<p>If Trycycler was able to reconcile the cluster, a new file
-‘2_all_seqs.fasta’ will be generated in the cluster directory,
+reconcile on each. You can run it like this, with no arguments (in the
+main isolate directory):</p>
+<pre><code>/save_projet/domino_wp3_isollates/scripts/reconcile.sh</code></pre>
+<p>If Trycycler was able to reconcile a cluster automatically, a new
+file ‘2_all_seqs.fasta’ will be generated in the cluster directory,
 containing the reconciled contigs. Frequently, it will fail to produce
-output, meaning that manual intervention is required to resolve.</p>
+output, meaning that manual intervention is required to resolve. The
+error file (written to err/try_rec_{clusternumber}) will guide your next
+course of action.</p>
 </section><section id="manual-interventions"><h2 class="section-heading">Manual interventions<a class="anchor" aria-label="anchor" href="#manual-interventions"></a>
 </h2>
 <hr class="half-width">
+<p>Reconciliation can fail for many reasons <a href="https://github.com/rrwick/Trycycler/wiki/Reconciling-contigs#manual-intervention" class="external-link">Reconciling
+contigs - manualintervention</a>.</p>
+<p>Most commonly, one or more contigs in a cluster will be too long or
+short. Mash distance greater than the default threshold (0.01) can also
+prevent the reconciliation from finishing. Like we saw before with the
+cluster folders, we can exclude a contig by renaming its extension from
+‘contig.fasta’ to ‘contig.bad’, or similiar. You can then rerun
+Trycycler reconcile on just that cluster:</p>
+<pre><code>qsub -cwd -V -N tr_test -e err/try_rec_001 -o out/try_rec_001 -pe thread 4 -b y "conda activate trycycler-0.5.4 &amp;&amp; trycycler reconcile --reads *.fastq.gz --cluster_dir trycycler/cluster_001 --threads 4 &amp;&amp; conda deactivate"</code></pre>
+<p>If we are left with very few contigs in a cluster (e.g. &lt;3) then
+it will probably be worth making more assemblies before proceeding
+further, but as we started with 9 assemblies we have some leeway.</p>
+</section><section id="manual-repair-of-overlap"><h2 class="section-heading">Manual repair of overlap<a class="anchor" aria-label="anchor" href="#manual-repair-of-overlap"></a>
+</h2>
+<hr class="half-width">
+<p>You may encounter a cluster with a contig that is longer than the
+others, preventing reconciliation. This can indicate an assembly error
+and is particularly common with plasmids, which can be double or even
+tripled in length. We can manually remove the (presumed) duplicate
+sequence in a text editor: <a href="https://github.com/rrwick/Trycycler/wiki/FAQ-and-miscellaneous-tips#manually-fixing-overlap" class="external-link">Trycycler
+Wiki: Manually fixing overlap</a>.</p>
 <!-- 
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
- --></section></section>
+ -->
+</section></section>
 </div>
     </main>
 </div>

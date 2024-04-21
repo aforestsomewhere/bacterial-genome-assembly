@@ -184,6 +184,7 @@
         <ul><li><a href="#introduction">Introduction</a></li>
 <li><a href="#running-trycycler-reconcile">Running Trycycler Reconcile</a></li>
 <li><a href="#manual-interventions">Manual interventions</a></li>
+<li><a href="#manual-repair-of-overlap">Manual repair of overlap</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
         
@@ -303,18 +304,42 @@ manually assessed</div>
 qsub -cwd -V -N tr_test -e err/try_rec_002 -o out/try_rec_002 -pe thread 4 -b y "conda activate trycycler-0.5.4 &amp;&amp; trycycler reconcile --reads *.fastq.gz --cluster_dir trycycler/cluster_002 --threads 4 &amp;&amp; conda deactivate"</code></pre>
 <p>However, for simplicity, a bash script is provided which will detect
 the clusters present, and generate and submit a script to run Trycycler
-reconcile on each. You can run it like this:</p>
-<pre><code><span><span class="va">..</span><span class="op">/</span><span class="va">scripts</span><span class="op">/</span><span class="va">reconcile.sh</span></span></code></pre>
-<p>If Trycycler was able to reconcile the cluster, a new file
-‘2_all_seqs.fasta’ will be generated in the cluster directory,
+reconcile on each. You can run it like this, with no arguments (in the
+main isolate directory):</p>
+<pre><code>/save_projet/domino_wp3_isollates/scripts/reconcile.sh</code></pre>
+<p>If Trycycler was able to reconcile a cluster automatically, a new
+file ‘2_all_seqs.fasta’ will be generated in the cluster directory,
 containing the reconciled contigs. Frequently, it will fail to produce
-output, meaning that manual intervention is required to resolve.</p>
+output, meaning that manual intervention is required to resolve. The
+error file (written to err/try_rec_{clusternumber}) will guide your next
+course of action.</p>
 </section><section id="manual-interventions"><h2 class="section-heading">Manual interventions<a class="anchor" aria-label="anchor" href="#manual-interventions"></a>
 </h2>
-<hr class="half-width"><!-- 
+<hr class="half-width"><p>Reconciliation can fail for many reasons <a href="https://github.com/rrwick/Trycycler/wiki/Reconciling-contigs#manual-intervention" class="external-link">Reconciling
+contigs - manualintervention</a>.</p>
+<p>Most commonly, one or more contigs in a cluster will be too long or
+short. Mash distance greater than the default threshold (0.01) can also
+prevent the reconciliation from finishing. Like we saw before with the
+cluster folders, we can exclude a contig by renaming its extension from
+‘contig.fasta’ to ‘contig.bad’, or similiar. You can then rerun
+Trycycler reconcile on just that cluster:</p>
+<pre><code>qsub -cwd -V -N tr_test -e err/try_rec_001 -o out/try_rec_001 -pe thread 4 -b y "conda activate trycycler-0.5.4 &amp;&amp; trycycler reconcile --reads *.fastq.gz --cluster_dir trycycler/cluster_001 --threads 4 &amp;&amp; conda deactivate"</code></pre>
+<p>If we are left with very few contigs in a cluster (e.g. &lt;3) then
+it will probably be worth making more assemblies before proceeding
+further, but as we started with 9 assemblies we have some leeway.</p>
+</section><section id="manual-repair-of-overlap"><h2 class="section-heading">Manual repair of overlap<a class="anchor" aria-label="anchor" href="#manual-repair-of-overlap"></a>
+</h2>
+<hr class="half-width"><p>You may encounter a cluster with a contig that is longer than the
+others, preventing reconciliation. This can indicate an assembly error
+and is particularly common with plasmids, which can be double or even
+tripled in length. We can manually remove the (presumed) duplicate
+sequence in a text editor: <a href="https://github.com/rrwick/Trycycler/wiki/FAQ-and-miscellaneous-tips#manually-fixing-overlap" class="external-link">Trycycler
+Wiki: Manually fixing overlap</a>.</p>
+<!-- 
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
- --></section></div> <!-- / div.lesson-content -->
+ -->
+</section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="demo.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="index.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
