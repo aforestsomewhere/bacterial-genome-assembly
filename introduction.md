@@ -28,37 +28,26 @@ This can be particularly interesting to food microbiologists in the context of a
 
 Short-read sequencing (e.g. Illumina) generates highly accurate reads, but the short length of reads (typically 150-300bp) cannot resolve repetitive or difficult-to-sequence regions, resulting in fragmented draft assemblies. Importantly, dynamic genome elements such as IS, REP and ICE are often themselves repetitive, meaning that their presence is not reflected in the draft assembly, yet they can be quite influential on the phenotype of bacterial isolates.
 
-::::::::::::::::::::::::::::::::::::: challenge 
+:::::::::::::::::::::::::::::::::::::::::: spoiler
+### Insertion sequences (IS)
 
-## Insertion sequences (IS)
-
-:::::::::::::::::::::::: solution 
-
-## Show more
 Insertion sequences (IS) are short genomic elements which are frequently found in bacterial genomes. They can shape genomes as they move around, potentially introducing deletions, mutations and influencing gene expression.
-![Overview of IS - reproduced from 10.1128/spectrum.02112-21](https://www.ncbi.nlm.nih.gov/pmc/articles/instance/9241782/bin/spectrum.02112-21-f007.jpg){alt='Insertion Sequences'}
-:::::::::::::::::::::::::::::::::::::
+![Overview of IS - reproduced from 10.1128/spectrum.02112-21](https://www.ncbi.nlm.nih.gov/pmc/articles/instance/9241782/bin/spectrum.02112-21-f007.jpg){alt='Insertion Sequences - reproduced from 10.1128/spectrum.02112-21'}
+:::::::::::::::::::::::::::::::::::::::::::::::
 
-## REP sequences
+:::::::::::::::::::::::::::::::::::::::::: spoiler
+### REP sequences
 
-:::::::::::::::::::::::: solution 
-
-## Show more
 REP sequences are genomic regions containing highly repetitive and palindromic sequences. They are often located in the the extragenic space of some bacterial genomes e.g. ERIC (Enterobacterial Repetitive Intergenic Consensus) sequences in the Enterobacterales.
-![Overview of rep sequences - reproduced from 10.1111/1574-6976.12036](https://d3i71xaburhd42.cloudfront.net/9d601ea51726a3257a80ba2f7cc9f98c4a569397/2-Figure1-1.png){alt='Examples of rep sequences'}
+![Overview of rep sequences - reproduced from 10.1111/1574-6976.12036](https://d3i71xaburhd42.cloudfront.net/9d601ea51726a3257a80ba2f7cc9f98c4a569397/2-Figure1-1.png){alt='Examples of rep sequences - reproduced from 10.1111/1574-6976.12036'}
+:::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::: spoiler
+### Integrative and Conjugative Elements (ICEs)
 
-## Integrative and Conjugative Elements (ICEs)
-
-:::::::::::::::::::::::: solution 
-
-## Show more
 Integrative and Conjugative Elements (ICEs) are mobile genetic elements capable of moving between hosts and donors through conjugation. They are flanked on either side by direct repeat sequences, which allow them to excise via site-specific recombination.
 ![Overview of ICE structure - reproduced from 10.1007/s10142-022-00903-2](https://media.springernature.com/lw685/springer-static/image/art%3A10.1007%2Fs10142-022-00903-2/MediaObjects/10142_2022_903_Fig2_HTML.png?as=webp){alt='ICEs'}
-
-:::::::::::::::::::::::::::::::::
-::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Assembling the "perfect" bacterial genome?
 
@@ -68,9 +57,12 @@ Hybrid bacterial whole-genome assembly combines the accuracy of short reads with
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 ## Example: long-read-first assembly pipeline:
-:::::::::::::::::::::::: solution 
+An overview of a typical hybrid-assembly pipeline, using long reads-first:
+:::::::::::::::::::::::: solution
+## Show more
+'Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing' - reproduced from 10.1371/journal.pcbi.1010905
 Note: this is by far from the only possible pipeline and does not include, for example, PacBio sequencing.
-![Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing - reproduced from 10.1371/journal.pcbi.1010905](https://www.researchgate.net/publication/368938787/figure/fig1/AS:11431281124501087@1677968652785/Illustrated-overview-of-our-recommended-approach-to-perfect-bacterial-whole-genome.png){alt='Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing'}
+![Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing - reproduced from 10.1371/journal.pcbi.1010905](https://www.researchgate.net/publication/368938787/figure/fig1/AS:11431281124501087@1677968652785/Illustrated-overview-of-our-recommended-approach-to-perfect-bacterial-whole-genome.png){alt='Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing - reproduced from 10.1371/journal.pcbi.1010905'}
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -95,10 +87,10 @@ It is possible to assemble a bacterial genome and find that it is "closed" as on
 
 Trycycler is a tool developed by Ryan Wick and colleagues to address an issue they had uncovered in previous benchmarking work. Several long-read assembly tools exist for genome assembly, each with their own strengths and tendency to generate certain assembly errors, for example:
 
-* Flye: fast, accurate, has dedicated plasmid setting, high RAM usage
-* Raven: fast, low RAM usage, issues with circularisation and missing small plasmids
-* Miniasm (within Unicycler): good at achieving circularisation, but not the best at completing chromosomal contigs
-* Canu: slow, good at recovering plasmids, tendency to produce chimeric replicons + hinder circularisation
+* **Flye**: fast, accurate, has dedicated plasmid setting, high RAM usage
+* **Raven**: fast, low RAM usage, issues with circularisation and missing small plasmids
+* **Miniasm** (within Unicycler): good at achieving circularisation, but not the best at completing chromosomal contigs
+* **Canu**: slow, good at recovering plasmids, tendency to produce chimeric replicons + hinder circularisation
 
 Keeping with the idea that any assembly is a **hypothesis** of the original bacterial genome, Trycycler looks to improve the strength of our **hypothesis** by finding a consensus amongst different assemblers and subsets of the entire read set. In doing so, we should be better able to identify and correct large-scale assembly errors. 
 
@@ -108,7 +100,9 @@ It is important to remember that Trycycler assemblies are still unlikely to be p
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 ## A more detailed look at the Trycycler process
-:::::::::::::::::::::::: solution 
+Illustrated pipeline overview
+:::::::::::::::::::::::: solution
+## Show more
 ![Illustrated pipeline overview - reproduced from https://github.com/rrwick/Trycycler/wiki/](https://github.com/rrwick/Trycycler/wiki/images/pipeline.png){alt='Illustrated pipeline overview'}
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
