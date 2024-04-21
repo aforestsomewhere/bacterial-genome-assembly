@@ -1,7 +1,7 @@
 ---
 title: "Introduction to Bacterial Genome Assembly using Trycycler"
-teaching: 30
-exercises: 2
+teaching: 7
+exercises: 0
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
@@ -59,7 +59,8 @@ Hybrid bacterial whole-genome assembly combines the accuracy of short reads with
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 ## Example: long-read-first assembly pipeline:
-An overview of a typical hybrid-assembly pipeline, using long reads-first:
+An overview of a typical hybrid-assembly pipeline, using long reads-first
+
 :::::::::::::::::::::::: solution
 ## Show more
 'Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing' - reproduced from 10.1371/journal.pcbi.1010905
@@ -102,10 +103,10 @@ It is important to remember that Trycycler assemblies are still unlikely to be p
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 ## A more detailed look at the Trycycler process
-Illustrated pipeline overview
 :::::::::::::::::::::::: solution
 ## Show more
-![Illustrated pipeline overview - reproduced from https://github.com/rrwick/Trycycler/wiki/](https://github.com/rrwick/Trycycler/wiki/images/pipeline.png){alt='Illustrated pipeline overview'}
+Illustrated pipeline overview - reproduced from the [Trycycler wiki](https://github.com/rrwick/Trycycler/wiki/)
+![Illustrated pipeline overview](https://github.com/rrwick/Trycycler/wiki/images/pipeline.png){alt='Illustrated pipeline overview'}
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
