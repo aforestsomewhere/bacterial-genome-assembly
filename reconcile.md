@@ -20,7 +20,7 @@ exercises: 2
 ## Introduction
 
 In the previous step we identified clusters of contigs, which could each represent true replicons present in our isolates. However, they were primarily clustered using Mash distance and before alignment, they need to be standardised in terms of length, similarity and orientation. We will use Trycycler's 'reconcile' function to achieve this.
-([Reconciling contigs](https://github.com/rrwick/Trycycler/wiki/Reconciling-contigs)). Additionally, as most (but not all!) bacterial replicons are circular, Trycycler will try to cleanly circularise each contig using the other other contigs in the cluster as a reference: for more information, see: [Trycycler wiki: How circularisation repair works](https://github.com/rrwick/Trycycler/wiki/How-circularisation-repair-works).
+([Trycycler wiki: Reconciling contigs](https://github.com/rrwick/Trycycler/wiki/Reconciling-contigs)). Additionally, as most (but not all!) bacterial replicons are circular, Trycycler will try to cleanly circularise each contig using the other other contigs in the cluster as a reference: for more information, see: [Trycycler wiki: How circularisation repair works](https://github.com/rrwick/Trycycler/wiki/How-circularisation-repair-works).
 
 ![Trycycler folder after clusters have been manually assessed](fig/folder4.jpg){alt='Trycycler folder after clusters have been manually assessed'}
 
@@ -43,9 +43,13 @@ If Trycycler was able to reconcile a cluster automatically, a new file '2_all_se
 
 ## Manual interventions
 
-Reconciliation can fail for many reasons [Reconciling contigs - manualintervention](https://github.com/rrwick/Trycycler/wiki/Reconciling-contigs#manual-intervention).
+Reconciliation can fail for many reasons [Reconciling contigs - Manual intervention](https://github.com/rrwick/Trycycler/wiki/Reconciling-contigs#manual-intervention).
 
-Most commonly, one or more contigs in a cluster will be too long or short. Mash distance greater than the default threshold (0.01) can also prevent the reconciliation from finishing. Like we saw before with the cluster folders, we can exclude a contig by renaming its extension from 'contig.fasta' to 'contig.bad', or similiar. You can then rerun Trycycler reconcile on just that cluster:
+Most commonly, one or more contigs in a cluster will be too long or short. Mash distance greater than the default threshold (0.01) can also prevent the reconciliation from finishing. Like we saw before with the cluster folders, we can exclude a contig by renaming its extension from 'contig.fasta' to 'contig.bad', or similiar. 
+
+![Marking a bad contig](fig/bad_contig.jpg){alt='Marking a bad contig'}
+
+You can then rerun Trycycler reconcile on just that cluster:
 ```
 qsub -cwd -V -N tr_test -e err/try_rec_001 -o out/try_rec_001 -pe thread 4 -b y "conda activate trycycler-0.5.4 && trycycler reconcile --reads *.fastq.gz --cluster_dir trycycler/cluster_001 --threads 4 && conda deactivate"
 ```
