@@ -72,6 +72,10 @@ qsub -cwd -V -N tree_view -o /out/tree_view -e /err/tree_view -b y "conda activa
 It should produce "contigs_newick.png", which you can then open and view. 
 ![Contigs_newick png generated with ETEToolkit](fig/contigs_newick.png){alt='Contigs_newick png generated with ETEToolkit'}
 
+To remove a cluster, you can simply rename the folder e.g. to rm_cluster_002 (or bad_cluster_002 - it doesn't matter once the directory name does not commence with "cluster_". This keeps the sequences, in case we want to revisit the decision later on.
+
+![Marking a "bad" cluster directory by renaming](fig/folder4.jpg){alt='Marking a "bad" cluster'}
+
 ::::::::::::::::::::::::::::::::::::: challenge
 
 ## Semi-automation
