@@ -268,7 +268,7 @@
 <div class="card-body">
 <div class="inner">
 <h3 class="card-title">Questions</h3>
-<ul><li>How can we use Trycycler on the Migale cluster?</li>
+<ul><li>How can we navigate the Migale cluster to evaluate clusters?</li>
 </ul></div>
 </div>
 </div>
@@ -302,8 +302,11 @@ data.</p>
 <p>Each sample directory should have a sub-directory containing the
 input assemblies,a sub-directory called ‘trycycler’ and a .fastq.gz
 containing the reads for that sample.</p>
-<p>![Sample directory structure] (fig/folder1.jpg){alt=‘Sample directory
-structure’}</p>
+<figure><img src="../fig/folder1.jpg" alt="Sample directory structure" class="figure mx-auto d-block"><div class="figcaption">Sample directory structure</div>
+</figure><p>Before starting, we will copy the sample folder to the working
+directory:</p>
+<pre><code><span><span class="va">rsync</span> <span class="op">-</span><span class="va">av</span> <span class="op">/</span><span class="va">save_projet</span><span class="op">/</span><span class="va">domino_wp3_isollates</span><span class="op">/</span><span class="va">test_CIRM_BIA1910</span> <span class="op">/</span><span class="va">work_projet</span><span class="op">/</span><span class="va">domino_wp3_isollates</span><span class="op">/</span><span class="va">test_CIRM_BIA1910</span></span>
+<span><span class="va">cd</span> <span class="op">/</span><span class="va">work_projet</span><span class="op">/</span><span class="va">domino_wp3_isollates</span><span class="op">/</span><span class="va">test_CIRM_BIA1910</span></span></code></pre>
 <p>When we descend into the ‘trycycler’ folder we can see the output
 from Trycycler clustering, with one folder for each cluster, and .newick
 and .phylip files which contain information on the clustering of contigs
@@ -361,22 +364,22 @@ assembler.</p>
 into an in-browser tool like <a href="http://etetoolkit.org/treeview/" class="external-link">ETEToolkit</a>, or use the
 software installed on Migale with the supplied helper script in
 ‘/save_projet/domino_wp3_isollates/scripts/ete.py’</p>
-<div class="codewrapper sourceCode" id="cb2">
+<div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="im">from</span> ete3 <span class="im">import</span> Tree</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co"># Need to include this for Qt bug</span></span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>os.environ[<span class="st">'QT_QPA_PLATFORM'</span>]<span class="op">=</span><span class="st">'offscreen'</span></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="co"># Read the tree</span></span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>t <span class="op">=</span> Tree(<span class="st">'trycycler/contigs.newick'</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="co"># Render the tree to a PNG file</span></span>
-<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a>t.render(<span class="st">"contigs_newick.png"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="im">from</span> ete3 <span class="im">import</span> Tree</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co"># Need to include this for Qt bug</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>os.environ[<span class="st">'QT_QPA_PLATFORM'</span>]<span class="op">=</span><span class="st">'offscreen'</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co"># Read the tree</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>t <span class="op">=</span> Tree(<span class="st">'trycycler/contigs.newick'</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co"># Render the tree to a PNG file</span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>t.render(<span class="st">"contigs_newick.png"</span>)</span></code></pre>
 </div>
 <p>You can execute this in the sample directory with this command:</p>
-<pre><code>qsub -cwd -V -N tree_view -o /out/tree_view -e /err/tree_view -b y "conda activate ete3-3.1.3 &amp;&amp; python3 ../../ete.py &amp;&amp; conda deactivate"</code></pre>
+<pre><code>qsub -cwd -V -N tree_view -o /out/tree_view -e /err/tree_view -b y "conda activate ete3-3.1.3 &amp;&amp; python3 /save_projet/domino_wp3_isollates/scripts/ete.py &amp;&amp; conda deactivate"</code></pre>
 <p>It should produce “contigs_newick.png”, which you can then open and
 view. <img src="../fig/contigs_newick.png" alt="Contigs_newick png generated with ETEToolkit" class="figure"></p>
 <p>To remove a cluster, you can simply rename the folder e.g. to
@@ -391,7 +394,7 @@ renaming</div>
   <h3 class="accordion-header" id="headingSpoiler1">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Hackathon: semi-automation of cluster assessment?</h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>If you can, make a quick note of why you decided to exclude/include
 clusters on the recording sheet.</p>
@@ -402,7 +405,8 @@ clusters, e.g.</p>
 <li>if a cluster is highly-related to a chromomosomal cluster and
 contains &lt;2, discard</li>
 <li>when is it worth keeping “fragments” which could describe true <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9980784/" class="external-link">structural
-heterogeneity</a> e.g. (pro)phage, <em>fim</em> switches?</li>
+heterogeneity</a> e.g. (pro)phage, <em>fim</em> switches, conjugative
+plasmids?</li>
 <li>etc!</li>
 </ul></div>
 </div>
