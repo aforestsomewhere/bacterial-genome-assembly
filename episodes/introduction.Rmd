@@ -33,21 +33,23 @@ Short-read sequencing (e.g. Illumina) generates highly accurate reads, but the s
 
 Insertion sequences (IS) are short genomic elements which are frequently found in bacterial genomes. They can shape genomes as they move around, potentially introducing deletions, mutations and influencing gene expression.
 ![Overview of IS - reproduced from 10.1128/spectrum.02112-21](https://www.ncbi.nlm.nih.gov/pmc/articles/instance/9241782/bin/spectrum.02112-21-f007.jpg){alt='Insertion Sequences - reproduced from 10.1128/spectrum.02112-21'}
-:::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::: spoiler
 ### REP sequences
 
 REP sequences are genomic regions containing highly repetitive and palindromic sequences. They are often located in the the extragenic space of some bacterial genomes e.g. ERIC (Enterobacterial Repetitive Intergenic Consensus) sequences in the Enterobacterales.
 ![Overview of rep sequences - reproduced from 10.1111/1574-6976.12036](https://d3i71xaburhd42.cloudfront.net/9d601ea51726a3257a80ba2f7cc9f98c4a569397/2-Figure1-1.png){alt='Examples of rep sequences - reproduced from 10.1111/1574-6976.12036'}
-:::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::: spoiler
 ### Integrative and Conjugative Elements (ICEs)
 
 Integrative and Conjugative Elements (ICEs) are mobile genetic elements capable of moving between hosts and donors through conjugation. They are flanked on either side by direct repeat sequences, which allow them to excise via site-specific recombination.
 ![Overview of ICE structure - reproduced from 10.1007/s10142-022-00903-2](https://media.springernature.com/lw685/springer-static/image/art%3A10.1007%2Fs10142-022-00903-2/MediaObjects/10142_2022_903_Fig2_HTML.png?as=webp){alt='ICEs'}
-:::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Assembling the "perfect" bacterial genome?
 
