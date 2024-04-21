@@ -335,7 +335,7 @@ influential on the phenotype of bacterial isolates.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show more</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Insertion sequences (IS) are short genomic elements which are
 frequently found in bacterial genomes. They can shape genomes as they
@@ -362,7 +362,7 @@ influencing gene expression. <img src="https://www.ncbi.nlm.nih.gov/pmc/articles
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show more</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>REP sequences are genomic regions containing highly repetitive and
 palindromic sequences. They are often located in the the extragenic
@@ -390,7 +390,7 @@ Intergenic Consensus) sequences in the Enterobacterales. <img src="https://d3i71
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show more</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>Integrative and Conjugative Elements (ICEs) are mobile genetic
 elements capable of moving between hosts and donors through conjugation.
@@ -433,7 +433,7 @@ pipeline:<a class="anchor" aria-label="anchor" href="#example-long-read-first-as
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>Note: this is by far from the only possible pipeline and does not
 include, for example, PacBio sequencing. <img src="https://www.researchgate.net/publication/368938787/figure/fig1/AS:11431281124501087@1677968652785/Illustrated-overview-of-our-recommended-approach-to-perfect-bacterial-whole-genome.png" alt="Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing" class="figure"></p>
@@ -465,7 +465,7 @@ isn’t that good enough?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5">Show more</h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p>It is possible to assemble a bacterial genome and find that it is
 “closed” as one circular chromosome - however it may not be very
@@ -529,7 +529,7 @@ process<a class="anchor" aria-label="anchor" href="#a-more-detailed-look-at-the-
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6">Show me the solution</h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <figure><img src="https://github.com/rrwick/Trycycler/wiki/images/pipeline.png" alt="Illustrated pipeline overview" class="figure mx-auto d-block"><div class="figcaption">Illustrated pipeline overview - reproduced from
 <a href="https://github.com/rrwick/Trycycler/wiki/" class="external-link uri">https://github.com/rrwick/Trycycler/wiki/</a>
@@ -612,30 +612,28 @@ Trycycler’s “subsample” command was used to generate 3 subsamples of
 each readset at a minimum allowed read depth of 20x, and providing the
 expected genome size. Each subsample was then assembled by each
 assembler (Flye, Raven and Unicycler), generating a total of 9
-assemblies. Step 2 of Trycycler (<a href="https://github.com/rrwick/Trycycler/wiki/Clustering-contigs" class="external-link">Clustering
+assemblies. (One assembly was made for each (not-subsampled) readset
+using Canu - it wasn’t included in the Trycycler clustering but could be
+useful later for troubleshooting more challenging assemblies).</p>
+<p>Step 2 of Trycycler (<a href="https://github.com/rrwick/Trycycler/wiki/Clustering-contigs" class="external-link">Clustering
 contigs</a>) has already been run, so let’s take a look at our starting
 data.</p>
-<p>(One assembly was made for each (not-subsampled) readset using Canu -
-it wasn’t included in the Trycycler clustering but could be useful later
-for troubleshooting more challenging assemblies).</p>
 <pre><code><span> <span class="va">cd</span> <span class="op">/</span><span class="va">save_projet</span><span class="op">/</span><span class="va">domino_wp3_isollates</span></span></code></pre>
-<p>Each sample directory should look like this, with a sub-directory
-containing the input assemblies, a .fastq.gz containing the reads for
-that sample, and a sub-directory called ‘trycycler’.</p>
+<p>Each sample directory should have a sub-directory containing the
+input assemblies,a sub-directory called ‘trycycler’ and a .fastq.gz
+containing the reads for that sample.</p>
 <p>![Sample directory structure] (fig/folder1.jpg){alt=‘Sample directory
 structure’}</p>
 <p>When we descend into the ‘trycycler’ folder we can see the output
 from Trycycler clustering, with one folder for each cluster, and .newick
 and .phylip files which contain information on the clustering of contigs
 (complete-linkage clustering based on Mash distance).</p>
-<p>![Trycycler directory structure] (fig/folder2.jpg){alt=‘Trycyler
-directory structure’}</p>
-<p>At the start, each cluster directory contains just one directory
+<figure><img src="fig/folder2.jpg" alt="Trycyler directory structure" class="figure mx-auto d-block"><div class="figcaption">Trycycler directory structure</div>
+</figure><p>At the start, each cluster directory contains just one directory
 called “1_contigs” which contains the .fasta sequences of all contigs
 assigned to that cluster:</p>
-<p>![Cluster directory structure] (fig/folder3.jpg){alt=‘Cluster
-directory structure’}</p>
-<div id="callout1" class="callout">
+<figure><img src="fig/folder3.jpg" alt="Cluster directory structure" class="figure mx-auto d-block"><div class="figcaption">Cluster directory structure</div>
+</figure><div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -683,32 +681,32 @@ assembler.</p>
 <p>Next, view the tree. You can either copy and paste the .newick file
 into an in-browser tool like <a href="http://etetoolkit.org/treeview/" class="external-link">ETEToolkit</a>, or use the
 software installed on Migale with the supplied helper script in
-‘/save_projet/domino_wp3_isollates/scripts/ete.py’ ’’’ from ete3 import
-Tree import os # Need to include this for Qt bug
-os.environ[‘QT_QPA_PLATFORM’]=‘offscreen’</p>
-</section><div class="section level1">
-<h1 id="read-the-tree">Read the tree<a class="anchor" aria-label="anchor" href="#read-the-tree"></a>
-</h1>
-<p>t = Tree(‘trycycler/contigs.newick’)</p>
+‘/save_projet/domino_wp3_isollates/scripts/ete.py’</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="im">from</span> ete3 <span class="im">import</span> Tree</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co"># Need to include this for Qt bug</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>os.environ[<span class="st">'QT_QPA_PLATFORM'</span>]<span class="op">=</span><span class="st">'offscreen'</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="co"># Read the tree</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>t <span class="op">=</span> Tree(<span class="st">'trycycler/contigs.newick'</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="co"># Render the tree to a PNG file</span></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a>t.render(<span class="st">"contigs_newick.png"</span>)</span></code></pre>
 </div>
-<div class="section level1">
-<h1 id="render-the-tree-to-a-png-file">Render the tree to a PNG file<a class="anchor" aria-label="anchor" href="#render-the-tree-to-a-png-file"></a>
-</h1>
-<p>t.render(“contigs_newick.png”) ’’’ You can execute this in the sample
-directory with this command: ’’’ qsub -cwd -V -N tree_view -o
-/out/tree_view -e /err/tree_view -b y “conda activate ete3-3.1.3
-&amp;&amp; python3 ../../ete.py &amp;&amp; conda deactivate” ’’’ It
-should produce “contigs_newick.png”, which you can then open and
-view.</p>
-<div class="section level2">
-<h2 id="trycycler-reconcile">Trycycler Reconcile<a class="anchor" aria-label="anchor" href="#trycycler-reconcile"></a>
+<p>You can execute this in the sample directory with this command:</p>
+<pre><code>qsub -cwd -V -N tree_view -o /out/tree_view -e /err/tree_view -b y "conda activate ete3-3.1.3 &amp;&amp; python3 ../../ete.py &amp;&amp; conda deactivate"</code></pre>
+<p>It should produce “contigs_newick.png”, which you can then open and
+view. <img src="fig/contigs_newick.png" alt="Contigs_newick png generated with ETEToolkit" class="figure"></p>
+</section><section id="trycycler-reconcile"><h2 class="section-heading">Trycycler Reconcile<a class="anchor" aria-label="anchor" href="#trycycler-reconcile"></a>
 </h2>
+<hr class="half-width">
 <!-- 
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
- -->
-</div>
-</div></section>
+ --></section></section>
 </div>
     </main>
 </div>
