@@ -24,7 +24,17 @@ Short (Illumina NovaSeq) and long (ONT P2solo) read data has been generated for 
 ```
  cd /save_projet/domino_wp3_isollates
 ```
+Each sample directory should look like this, with a sub-directory containing the input assemblies, a .fastq.gz containing the reads for that sample, and a sub-directory called 'trycycler'.
+
+![Sample directory structure (https://github.com/aforestsomewhere/bacterial-genome-assembly/blob/main/figures/folder1.jpg){alt='Sample directory structure'}
+
+When we descend into the 'trycycler' folder we can see the output from Trycycler clustering, with one folder for each cluster, and .newick and .phylip files which contain information on the clustering of contigs (complete-linkage clustering based on Mash distance).
 
 (One assembly was made for each (not-subsampled) readset using Canu).
+
+
+## Trycycler Reconcile
+
+
 
 [r-markdown]: https://rmarkdown.rstudio.com/
