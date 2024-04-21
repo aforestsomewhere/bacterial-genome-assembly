@@ -282,18 +282,21 @@ expected genome size. Each subsample was then assembled by each
 assembler (Flye, Raven and Unicycler), generating a total of 9
 assemblies. Trycycler “cluster” has already been run, so let’s take a
 look at our starting data.</p>
+<p>(One assembly was made for each (not-subsampled) readset using Canu -
+it wasn’t included in the Trycycler clustering but could be useful later
+for troubleshooting more challenging assemblies).</p>
 <pre><code><span> <span class="va">cd</span> <span class="op">/</span><span class="va">save_projet</span><span class="op">/</span><span class="va">domino_wp3_isollates</span></span></code></pre>
 <p>Each sample directory should look like this, with a sub-directory
 containing the input assemblies, a .fastq.gz containing the reads for
 that sample, and a sub-directory called ‘trycycler’.</p>
-<p>![Sample directory structure (<a href="https://github.com/aforestsomewhere/bacterial-genome-assembly/blob/main/figures/folder1.jpg" class="external-link uri">https://github.com/aforestsomewhere/bacterial-genome-assembly/blob/main/figures/folder1.jpg</a>){alt=‘Sample
-directory structure’}</p>
+<p>![Sample directory structure (fig/folder1.jpg){alt=‘Sample directory
+structure’}</p>
 <p>When we descend into the ‘trycycler’ folder we can see the output
 from Trycycler clustering, with one folder for each cluster, and .newick
 and .phylip files which contain information on the clustering of contigs
 (complete-linkage clustering based on Mash distance).</p>
-<p>(One assembly was made for each (not-subsampled) readset using
-Canu).</p>
+<p>![Trycycler directory structure (fig/folder2.jpg){alt=‘Trycyler
+directory structure’}</p>
 </section><section id="trycycler-reconcile"><h2 class="section-heading">Trycycler Reconcile<a class="anchor" aria-label="anchor" href="#trycycler-reconcile"></a>
 </h2>
 <hr class="half-width"><!-- 
