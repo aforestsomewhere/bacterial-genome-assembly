@@ -1,5 +1,5 @@
 ---
-title: "Reconciling clusters"
+title: "Reconciling Clusters"
 teaching: 30
 exercises: 2
 ---
@@ -39,7 +39,12 @@ However, for simplicity, a bash script is provided which will detect the cluster
 ```
 /save_projet/domino_wp3_isollates/scripts/reconcile.sh
 ```
-If Trycycler was able to reconcile a cluster automatically, a new file '2_all_seqs.fasta' will be generated in the cluster directory, containing the reconciled contigs. Frequently, it will fail to produce output, meaning that manual intervention is required to resolve. The error file (written to err/try_rec_{clusternumber}) will guide your next course of action.
+If Trycycler was able to reconcile a cluster automatically, a new file '2_all_seqs.fasta' will be generated in the cluster directory, containing the reconciled contigs. 
+
+:::::::::::::::::::::::::::::::::::::::::: spoiler
+![When Trycycler reconcile works first time :)](https://imgflip.com/i/ss8e7){alt='When Trycycler reconcile works first time :)'}
+:::::::::::::::::::::::::::::::::::::::::::::::
+More frequently, it will fail to produce output, meaning that manual intervention is required to resolve. The error file (written to err/try_rec_{clusternumber}) will guide your next course of action.
 
 ## Manual interventions
 
