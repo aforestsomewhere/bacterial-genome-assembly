@@ -6,7 +6,7 @@ exercises: 2
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- How can we use Trycycler on the Migale cluster?
+- How can we navigate the Migale cluster to evaluate clusters?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -28,7 +28,13 @@ Step 2 of Trycycler ([Clustering contigs](https://github.com/rrwick/Trycycler/wi
 ```
 Each sample directory should have a sub-directory containing the input assemblies,a sub-directory called 'trycycler' and a .fastq.gz containing the reads for that sample.
 
-![Sample directory structure] (fig/folder1.jpg){alt='Sample directory structure'}
+![Sample directory structure](fig/folder1.jpg){alt='Sample directory structure'}
+
+Before starting, we will copy the sample folder to the working directory:
+```
+rsync -av /save_projet/domino_wp3_isollates/test_CIRM_BIA1910 /work_projet/domino_wp3_isollates/test_CIRM_BIA1910
+cd /work_projet/domino_wp3_isollates/test_CIRM_BIA1910
+```
 
 When we descend into the 'trycycler' folder we can see the output from Trycycler clustering, with one folder for each cluster, and .newick and .phylip files which contain information on the clustering of contigs (complete-linkage clustering based on Mash distance).
 
@@ -67,7 +73,7 @@ t.render("contigs_newick.png")
 ```
 You can execute this in the sample directory with this command:
 ```
-qsub -cwd -V -N tree_view -o /out/tree_view -e /err/tree_view -b y "conda activate ete3-3.1.3 && python3 ../../ete.py && conda deactivate"
+qsub -cwd -V -N tree_view -o /out/tree_view -e /err/tree_view -b y "conda activate ete3-3.1.3 && python3 /save_projet/domino_wp3_isollates/scripts/ete.py && conda deactivate"
 ```
 It should produce "contigs_newick.png", which you can then open and view. 
 ![Contigs_newick png generated with ETEToolkit](fig/contigs_newick.png){alt='Contigs_newick png generated with ETEToolkit'}
@@ -86,7 +92,7 @@ It is unlikely that Trycycler can be fully automated, but we could consider writ
 
 * if the number of contigs in a cluster is <2, discard
 * if a cluster is highly-related to a chromomosomal cluster and contains <2, discard
-* when is it worth keeping "fragments" which could describe true [structural heterogeneity](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9980784/) e.g. (pro)phage, *fim* switches?
+* when is it worth keeping "fragments" which could describe true [structural heterogeneity](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9980784/) e.g. (pro)phage, *fim* switches, conjugative plasmids?
 * etc!
 
 :::::::::::::::::::::::::::::::::::::::::::::::
