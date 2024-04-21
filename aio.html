@@ -348,7 +348,7 @@ influential on the phenotype of bacterial isolates.</p>
   <h3 class="accordion-header" id="headingSpoiler1">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Insertion sequences (IS)</h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>Insertion sequences (IS) are short genomic elements which are
 frequently found in bacterial genomes. They can shape genomes as they
@@ -364,7 +364,7 @@ influencing gene expression. <img src="https://www.ncbi.nlm.nih.gov/pmc/articles
   <h3 class="accordion-header" id="headingSpoiler2">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>REP sequences</h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <p>REP sequences are genomic regions containing highly repetitive and
 palindromic sequences. They are often located in the the extragenic
@@ -380,7 +380,7 @@ Intergenic Consensus) sequences in the Enterobacterales. <img src="https://d3i71
   <h3 class="accordion-header" id="headingSpoiler3">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Integrative and Conjugative Elements (ICEs)</h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
 <div class="accordion-body">
 <p>Integrative and Conjugative Elements (ICEs) are mobile genetic
 elements capable of moving between hosts and donors through conjugation.
@@ -448,7 +448,7 @@ isn’t that good enough?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show more</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>It is possible to assemble a bacterial genome and find that it is
 “closed” as one circular chromosome - however it may not be very
@@ -581,15 +581,15 @@ Migale/SGE</li>
 <section id="introduction"><h2 class="section-heading">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
 <hr class="half-width">
-<p>Short (Illumina NovaSeq) and long (ONT P2solo) read data has been
-generated for a selection of bacterial isolates. After quality control,
-Trycycler’s “subsample” command was used to generate 3 subsamples of
-each readset at a minimum allowed read depth of 20x, and providing the
-expected genome size. Each subsample was then assembled by each
-assembler (Flye, Raven and Unicycler), generating a total of 9
+<p>Short (Illumina) and long (ONT) read data has been generated for a
+selection of bacterial isolates. After quality control, Trycycler’s
+“subsample” command was used to generate 3 subsamples of each readset at
+a minimum allowed read depth of 50x (20x for shallow-sequenced isolates)
+using expected genome sizes. Each subsample was then assembled by three
+assemblers (Flye, Raven and Unicycler), generating a total of 9
 assemblies. (One assembly was made for each (not-subsampled) readset
 using Canu - it wasn’t included in the Trycycler clustering but could be
-useful later for troubleshooting more challenging assemblies).</p>
+useful later for troubleshooting).</p>
 <p>Step 2 of Trycycler (<a href="https://github.com/rrwick/Trycycler/wiki/Clustering-contigs" class="external-link">Clustering
 contigs</a>) has already been run, so let’s take a look at our starting
 data.</p>
@@ -602,9 +602,9 @@ containing the reads for that sample.</p>
 directory:</p>
 <pre><code><span><span class="va">rsync</span> <span class="op">-</span><span class="va">av</span> <span class="op">/</span><span class="va">save_projet</span><span class="op">/</span><span class="va">domino_wp3_isollates</span><span class="op">/</span><span class="va">test_CIRM_BIA1910</span> <span class="op">/</span><span class="va">work_projet</span><span class="op">/</span><span class="va">domino_wp3_isollates</span><span class="op">/</span><span class="va">test_CIRM_BIA1910</span></span>
 <span><span class="va">cd</span> <span class="op">/</span><span class="va">work_projet</span><span class="op">/</span><span class="va">domino_wp3_isollates</span><span class="op">/</span><span class="va">test_CIRM_BIA1910</span></span></code></pre>
-<p>When we descend into the ‘trycycler’ folder we can see the output
-from Trycycler clustering, with one folder for each cluster, and .newick
-and .phylip files which contain information on the clustering of contigs
+<p>As we descend into the ‘trycycler’ folder we can see the output from
+Trycycler clustering, with one folder for each cluster, and .newick and
+.phylip files which contain information on the clustering of contigs
 (complete-linkage clustering based on Mash distance).</p>
 <figure><img src="fig/folder2.jpg" alt="Trycyler directory structure" class="figure mx-auto d-block"><div class="figcaption">Trycycler directory structure</div>
 </figure><p>At the start, each cluster directory contains just one directory
@@ -787,7 +787,7 @@ containing the reconciled contigs.</p>
   <h3 class="accordion-header" id="headingSpoiler1">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Show details</h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <figure><img src="https://imgflip.com/i/ss8e7" alt="When Trycycler reconcile works first time :)" class="figure mx-auto d-block"><div class="figcaption">When Trycycler reconcile works first time
 :)</div>

@@ -293,15 +293,15 @@ Migale/SGE</li>
 </div>
 <section id="introduction"><h2 class="section-heading">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
-<hr class="half-width"><p>Short (Illumina NovaSeq) and long (ONT P2solo) read data has been
-generated for a selection of bacterial isolates. After quality control,
-Trycycler’s “subsample” command was used to generate 3 subsamples of
-each readset at a minimum allowed read depth of 20x, and providing the
-expected genome size. Each subsample was then assembled by each
-assembler (Flye, Raven and Unicycler), generating a total of 9
+<hr class="half-width"><p>Short (Illumina) and long (ONT) read data has been generated for a
+selection of bacterial isolates. After quality control, Trycycler’s
+“subsample” command was used to generate 3 subsamples of each readset at
+a minimum allowed read depth of 50x (20x for shallow-sequenced isolates)
+using expected genome sizes. Each subsample was then assembled by three
+assemblers (Flye, Raven and Unicycler), generating a total of 9
 assemblies. (One assembly was made for each (not-subsampled) readset
 using Canu - it wasn’t included in the Trycycler clustering but could be
-useful later for troubleshooting more challenging assemblies).</p>
+useful later for troubleshooting).</p>
 <p>Step 2 of Trycycler (<a href="https://github.com/rrwick/Trycycler/wiki/Clustering-contigs" class="external-link">Clustering
 contigs</a>) has already been run, so let’s take a look at our starting
 data.</p>
@@ -314,9 +314,9 @@ containing the reads for that sample.</p>
 directory:</p>
 <pre><code><span><span class="va">rsync</span> <span class="op">-</span><span class="va">av</span> <span class="op">/</span><span class="va">save_projet</span><span class="op">/</span><span class="va">domino_wp3_isollates</span><span class="op">/</span><span class="va">test_CIRM_BIA1910</span> <span class="op">/</span><span class="va">work_projet</span><span class="op">/</span><span class="va">domino_wp3_isollates</span><span class="op">/</span><span class="va">test_CIRM_BIA1910</span></span>
 <span><span class="va">cd</span> <span class="op">/</span><span class="va">work_projet</span><span class="op">/</span><span class="va">domino_wp3_isollates</span><span class="op">/</span><span class="va">test_CIRM_BIA1910</span></span></code></pre>
-<p>When we descend into the ‘trycycler’ folder we can see the output
-from Trycycler clustering, with one folder for each cluster, and .newick
-and .phylip files which contain information on the clustering of contigs
+<p>As we descend into the ‘trycycler’ folder we can see the output from
+Trycycler clustering, with one folder for each cluster, and .newick and
+.phylip files which contain information on the clustering of contigs
 (complete-linkage clustering based on Mash distance).</p>
 <figure><img src="fig/folder2.jpg" alt="Trycyler directory structure" class="figure mx-auto d-block"><div class="figcaption">Trycycler directory structure</div>
 </figure><p>At the start, each cluster directory contains just one directory
