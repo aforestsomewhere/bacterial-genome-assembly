@@ -302,11 +302,11 @@
 each represent true replicons present in our isolates. However, they
 were primarily clustered using Mash distance and before alignment, they
 need to be standardised in terms of length, similarity and orientation.
-We will use Trycycler’s ‘reconcile’ function to achieve this. (<a href="https://github.com/rrwick/Trycycler/wiki/Reconciling-contigs" class="external-link">Reconciling
-contigs</a>). Additionally, as most (but not all!) bacterial replicons
-are circular, Trycycler will try to cleanly circularise each contig
-using the other other contigs in the cluster as a reference: for more
-information, see: <a href="https://github.com/rrwick/Trycycler/wiki/How-circularisation-repair-works" class="external-link">Trycycler
+We will use Trycycler’s ‘reconcile’ function to achieve this. (<a href="https://github.com/rrwick/Trycycler/wiki/Reconciling-contigs" class="external-link">Trycycler
+wiki: Reconciling contigs</a>). Additionally, as most (but not all!)
+bacterial replicons are circular, Trycycler will try to cleanly
+circularise each contig using the other other contigs in the cluster as
+a reference: for more information, see: <a href="https://github.com/rrwick/Trycycler/wiki/How-circularisation-repair-works" class="external-link">Trycycler
 wiki: How circularisation repair works</a>.</p>
 <figure><img src="../fig/folder4.jpg" alt="Trycycler folder after clusters have been manually assessed" class="figure mx-auto d-block"><div class="figcaption">Trycycler folder after clusters have been
 manually assessed</div>
@@ -333,13 +333,14 @@ course of action.</p>
 </section><section id="manual-interventions"><h2 class="section-heading">Manual interventions<a class="anchor" aria-label="anchor" href="#manual-interventions"></a>
 </h2>
 <hr class="half-width"><p>Reconciliation can fail for many reasons <a href="https://github.com/rrwick/Trycycler/wiki/Reconciling-contigs#manual-intervention" class="external-link">Reconciling
-contigs - manualintervention</a>.</p>
+contigs - Manual intervention</a>.</p>
 <p>Most commonly, one or more contigs in a cluster will be too long or
 short. Mash distance greater than the default threshold (0.01) can also
 prevent the reconciliation from finishing. Like we saw before with the
 cluster folders, we can exclude a contig by renaming its extension from
-‘contig.fasta’ to ‘contig.bad’, or similiar. You can then rerun
-Trycycler reconcile on just that cluster:</p>
+‘contig.fasta’ to ‘contig.bad’, or similiar.</p>
+<figure><img src="../fig/bad_contig.jpg" alt="Marking a bad contig" class="figure mx-auto d-block"><div class="figcaption">Marking a bad contig</div>
+</figure><p>You can then rerun Trycycler reconcile on just that cluster:</p>
 <pre><code>qsub -cwd -V -N tr_test -e err/try_rec_001 -o out/try_rec_001 -pe thread 4 -b y "conda activate trycycler-0.5.4 &amp;&amp; trycycler reconcile --reads *.fastq.gz --cluster_dir trycycler/cluster_001 --threads 4 &amp;&amp; conda deactivate"</code></pre>
 <p>If we are left with very few contigs in a cluster (e.g. &lt;3) then
 it will probably be worth making more assemblies before proceeding
