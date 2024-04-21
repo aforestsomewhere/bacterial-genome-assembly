@@ -1,5 +1,5 @@
 ---
-title: "Bacterial Genome Assembly using Trycycler"
+title: "Introduction to Bacterial Genome Assembly using Trycycler"
 teaching: 30
 exercises: 2
 ---
