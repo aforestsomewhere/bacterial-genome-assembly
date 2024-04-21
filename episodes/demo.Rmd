@@ -72,6 +72,24 @@ qsub -cwd -V -N tree_view -o /out/tree_view -e /err/tree_view -b y "conda activa
 It should produce "contigs_newick.png", which you can then open and view. 
 ![Contigs_newick png generated with ETEToolkit](fig/contigs_newick.png){alt='Contigs_newick png generated with ETEToolkit'}
 
+::::::::::::::::::::::::::::::::::::: challenge
+
+## Semi-automation
+
+If you can, make a quick note of why you decided to exclude/include clusters on the recording sheet.
+
+:::::::::::::::: solution
+
+It is unlikely that Trycycler can be fully automated, but we could consider writing rules to automate the discarding of obvious poor clusters, e.g.
+
+* if the number of contigs in a cluster is <2, discard
+* if a cluster is highly-related to a chromomosomal cluster and contains <2, discard
+* when is it worth keeping "fragments" which could describe true [structural heterogeneity](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9980784/) e.g. (pro)phage, *fim* switches?
+* etc!
+
+:::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
+
 ## Trycycler Reconcile
 
 
