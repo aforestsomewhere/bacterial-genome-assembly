@@ -76,13 +76,11 @@ To remove a cluster, you can simply rename the folder e.g. to rm_cluster_002 (or
 
 ![Marking a "bad" cluster directory by renaming](fig/folder4.jpg){alt='Marking a "bad" cluster'}
 
-::::::::::::::::::::::::::::::::::::: challenge
+:::::::::::::::::::::::::::::::::::::::::: spoiler
 
-## Semi-automation
+### Hackathon: semi-automation of cluster assessment?
 
 If you can, make a quick note of why you decided to exclude/include clusters on the recording sheet.
-
-:::::::::::::::: solution
 
 It is unlikely that Trycycler can be fully automated, but we could consider writing rules to automate the discarding of obvious poor clusters, e.g.
 
@@ -91,7 +89,6 @@ It is unlikely that Trycycler can be fully automated, but we could consider writ
 * when is it worth keeping "fragments" which could describe true [structural heterogeneity](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9980784/) e.g. (pro)phage, *fim* switches?
 * etc!
 
-:::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Trycycler Reconcile
