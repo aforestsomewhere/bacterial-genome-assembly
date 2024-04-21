@@ -173,6 +173,7 @@
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#introduction">Introduction</a></li>
+<li><a href="#trycycler-reconcile">Trycycler Reconcile</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
         
@@ -237,7 +238,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Using Trycycler on the Migale cluster</h1>
-        <p>Last updated on 2024-04-19 |
+        <p>Last updated on 2024-04-21 |
         
         <a href="https://github.com/carpentries/workbench-template-rmd/edit/main/episodes/demo.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -282,13 +283,23 @@ assembler (Flye, Raven and Unicycler), generating a total of 9
 assemblies. Trycycler “cluster” has already been run, so let’s take a
 look at our starting data.</p>
 <pre><code><span> <span class="va">cd</span> <span class="op">/</span><span class="va">save_projet</span><span class="op">/</span><span class="va">domino_wp3_isollates</span></span></code></pre>
+<p>Each sample directory should look like this, with a sub-directory
+containing the input assemblies, a .fastq.gz containing the reads for
+that sample, and a sub-directory called ‘trycycler’.</p>
+<p>![Sample directory structure (<a href="https://github.com/aforestsomewhere/bacterial-genome-assembly/blob/main/figures/folder1.jpg" class="external-link uri">https://github.com/aforestsomewhere/bacterial-genome-assembly/blob/main/figures/folder1.jpg</a>){alt=‘Sample
+directory structure’}</p>
+<p>When we descend into the ‘trycycler’ folder we can see the output
+from Trycycler clustering, with one folder for each cluster, and .newick
+and .phylip files which contain information on the clustering of contigs
+(complete-linkage clustering based on Mash distance).</p>
 <p>(One assembly was made for each (not-subsampled) readset using
 Canu).</p>
-<!-- 
+</section><section id="trycycler-reconcile"><h2 class="section-heading">Trycycler Reconcile<a class="anchor" aria-label="anchor" href="#trycycler-reconcile"></a>
+</h2>
+<hr class="half-width"><!-- 
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
- -->
-</section></div> <!-- / div.lesson-content -->
+ --></section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="introduction.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="index.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
@@ -346,7 +357,7 @@ any links that you are not going to use.
   "url": "https://carpentries.github.io/workbench-template-rmd/demo.html",
   "identifier": "https://carpentries.github.io/workbench-template-rmd/demo.html",
   "dateCreated": "2024-04-18",
-  "dateModified": "2024-04-19",
+  "dateModified": "2024-04-21",
   "datePublished": "2024-04-21"
 }
 
