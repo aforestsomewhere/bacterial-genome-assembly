@@ -19,7 +19,7 @@ exercises: 2
 
 ## Introduction
 
-Short (Illumina NovaSeq) and long (ONT P2solo) read data has been generated for a selection of bacterial isolates. After quality control, Trycycler's "subsample" command was used to generate 3 subsamples of each readset at a minimum allowed read depth of 20x, and providing the expected genome size. Each subsample was then assembled by each assembler (Flye, Raven and Unicycler), generating a total of 9 assemblies. (One assembly was made for each (not-subsampled) readset using Canu - it wasn't included in the Trycycler clustering but could be useful later for troubleshooting more challenging assemblies).
+Short (Illumina) and long (ONT) read data has been generated for a selection of bacterial isolates. After quality control, Trycycler's "subsample" command was used to generate 3 subsamples of each readset at a minimum allowed read depth of 50x (20x for shallow-sequenced isolates) using expected genome sizes. Each subsample was then assembled by three assemblers (Flye, Raven and Unicycler), generating a total of 9 assemblies. (One assembly was made for each (not-subsampled) readset using Canu - it wasn't included in the Trycycler clustering but could be useful later for troubleshooting).
 
 Step 2 of Trycycler ([Clustering contigs](https://github.com/rrwick/Trycycler/wiki/Clustering-contigs)) has already been run, so let's take a look at our starting data.
 
@@ -36,7 +36,7 @@ rsync -av /save_projet/domino_wp3_isollates/test_CIRM_BIA1910 /work_projet/domin
 cd /work_projet/domino_wp3_isollates/test_CIRM_BIA1910
 ```
 
-When we descend into the 'trycycler' folder we can see the output from Trycycler clustering, with one folder for each cluster, and .newick and .phylip files which contain information on the clustering of contigs (complete-linkage clustering based on Mash distance).
+As we descend into the 'trycycler' folder we can see the output from Trycycler clustering, with one folder for each cluster, and .newick and .phylip files which contain information on the clustering of contigs (complete-linkage clustering based on Mash distance).
 
 ![Trycycler directory structure](fig/folder2.jpg){alt='Trycyler directory structure'}
 
