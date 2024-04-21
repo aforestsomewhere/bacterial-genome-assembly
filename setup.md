@@ -28,7 +28,7 @@ You firstly need to connect to the `front` server of the Migale cluster using th
 
 ### Windows
 
-Use an SSH client like MobaXterm to create a new session. Enter 'front.migale.inrae.fr' as the remote host, tick the box to specify username and enter your login username sent by email. Enter your provided password when prompted (copy and paste may not work, so please type it manually). You may have issues to connect when logged into a corporate VPN, try disconnecting and then establishing the SSH session. Note that after 6 incorrect login attempts your account is temporarily banned for 10 mins - so let us know if you are having issues to connect!
+Use an SSH client like MobaXterm to create a new session. Enter 'front.migale.inrae.fr' as the remote host, tick the box to specify username and enter your login username sent by email. Enter your provided password when prompted (no additional spaces). You may have issues to connect when logged into a VPN, try disconnecting and then re-establishing the SSH session. Note that after 6 incorrect login attempts your account is temporarily banned for 10 mins - so let us know if you are having issues to connect!
 
 ::::::::::::::::::::::::
 
@@ -78,4 +78,4 @@ qsub -cwd -V -q short.q -N myblast -pe thread 4 myblast.sh
 * '-N' : name of the job
 * '-pe thread X' : number of CPUs to reserve
    
-For more detail see [https://migale.inrae.fr/faq](https://migale.inrae.fr/faq) the [Migale Tutorial](https://documents.migale.inrae.fr/posts/tutorials/migale-infra/)
+For more detail see [https://migale.inrae.fr/faq](https://migale.inrae.fr/faq) and the [Migale Tutorial](https://documents.migale.inrae.fr/posts/tutorials/migale-infra/)
