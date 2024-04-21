@@ -61,6 +61,7 @@ contact: 'katie.fala@teagasc.ie' # FIXME
 episodes: 
 - introduction.Rmd
 - demo.Rmd
+- reconcile.Rmd
 
 # Information for Learners
 learners: 
