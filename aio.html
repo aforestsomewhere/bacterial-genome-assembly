@@ -405,9 +405,9 @@ short contigs generated from Illumina data. Improvements in yield and
 accuracy of ONT data has caused a gradual shift in the field to
 “long-read-first” pipelines, using short reads only for the polishing of
 long-read assemblies.</p>
-<div id="example-long-read-first-assembly-pipeline" class="callout discussion">
+<div id="example-long-read-first-assembly-pipeline" class="callout challenge">
 <div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="example-long-read-first-assembly-pipeline" class="callout-inner">
 <h3 class="callout-title">Example: long-read-first assembly
@@ -415,15 +415,25 @@ pipeline:<a class="anchor" aria-label="anchor" href="#example-long-read-first-as
 </h3>
 <div class="callout-content">
 <p>An overview of a typical hybrid-assembly pipeline, using long
-reads-first: :::::::::::::::::::::::: solution ## Show more ‘Assembling
-the perfect bacterial genome using Oxford Nanopore and Illumina
-sequencing’ - reproduced from 10.1371/journal.pcbi.1010905 Note: this is
-by far from the only possible pipeline and does not include, for
-example, PacBio sequencing. <img src="https://www.researchgate.net/publication/368938787/figure/fig1/AS:11431281124501087@1677968652785/Illustrated-overview-of-our-recommended-approach-to-perfect-bacterial-whole-genome.png" alt="Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing - reproduced from 10.1371/journal.pcbi.1010905" class="figure"></p>
+reads-first</p>
 </div>
 </div>
 </div>
-<p>::::::::::::::::::::::::::::::::::::::::::::::::</p>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1">Show more</h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<p>‘Assembling the perfect bacterial genome using Oxford Nanopore and
+Illumina sequencing’ - reproduced from 10.1371/journal.pcbi.1010905
+Note: this is by far from the only possible pipeline and does not
+include, for example, PacBio sequencing. <img src="https://www.researchgate.net/publication/368938787/figure/fig1/AS:11431281124501087@1677968652785/Illustrated-overview-of-our-recommended-approach-to-perfect-bacterial-whole-genome.png" alt="Assembling the perfect bacterial genome using Oxford Nanopore and Illumina sequencing - reproduced from 10.1371/journal.pcbi.1010905" class="figure"></p>
+</div>
+</div>
+</div>
+</div>
 <p>Other pipelines exist which completely automate the long-read
 assembly process, such as Hybracter (<a href="https://github.com/gbouras13/hybracter" class="external-link uri">https://github.com/gbouras13/hybracter</a>) or Dragonflye
 (<a href="https://github.com/rpetit3/dragonflye" class="external-link uri">https://github.com/rpetit3/dragonflye</a>). Trycycler on the
@@ -443,12 +453,12 @@ isn’t that good enough?</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1">Show more</h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2">Show more</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>It is possible to assemble a bacterial genome and find that it is
 “closed” as one circular chromosome - however it may not be very
@@ -498,21 +508,31 @@ unlikely to be perfect, and will frequently contain “homopolymer errors”
 - however these can be corrected by long-read and particularly
 short-read polishing (there is debate on how much polishing is helpful -
 for further reading see Ryan Wick’s blog post: <a href="https://rrwick.github.io/2023/11/06/accuracy-vs-depth-update.html" class="external-link uri">https://rrwick.github.io/2023/11/06/accuracy-vs-depth-update.html</a>).</p>
-<div id="a-more-detailed-look-at-the-trycycler-process" class="callout discussion">
+<div id="a-more-detailed-look-at-the-trycycler-process" class="callout challenge">
 <div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="a-more-detailed-look-at-the-trycycler-process" class="callout-inner">
 <h3 class="callout-title">A more detailed look at the Trycycler
 process<a class="anchor" aria-label="anchor" href="#a-more-detailed-look-at-the-trycycler-process"></a>
 </h3>
 <div class="callout-content">
-<p>Illustrated pipeline overview :::::::::::::::::::::::: solution ##
-Show more <img src="https://github.com/rrwick/Trycycler/wiki/images/pipeline.png" alt="Illustrated pipeline overview" class="figure"></p>
+
 </div>
 </div>
 </div>
-<p>::::::::::::::::::::::::::::::::::::::::::::::::</p>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3">Show more</h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div class="accordion-body">
+<p>Illustrated pipeline overview - reproduced from the <a href="https://github.com/rrwick/Trycycler/wiki/" class="external-link">Trycycler wiki</a> <img src="https://github.com/rrwick/Trycycler/wiki/images/pipeline.png" alt="Illustrated pipeline overview" class="figure"></p>
+</div>
+</div>
+</div>
+</div>
 </section><section id="enough-theory-time-for-a-demo"><h2 class="section-heading">Enough theory, time for a demo!<a class="anchor" aria-label="anchor" href="#enough-theory-time-for-a-demo"></a>
 </h2>
 <hr class="half-width">
