@@ -207,6 +207,18 @@
 </div>
 <!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush4">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading4">
+        <a href="reconcile.html">3. Reconciling clusters</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -740,7 +752,77 @@ heterogeneity</a> e.g. (pro)phage, <em>fim</em> switches?</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
  -->
-</section></section>
+</section></section><section id="aio-reconcile"><p>Content from <a href="reconcile.html">Reconciling clusters</a></p>
+<hr>
+<p>Last updated on 2024-04-21 |
+        
+        <a href="https://github.com/carpentries/workbench-template-rmd/edit/main/episodes/reconcile.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 32 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>What happens next to “good” clusters we identified?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Understand how and why to exclude a contig from a cluster</li>
+<li>Be able to manually repair duplicated contigs</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="introduction"><h2 class="section-heading">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
+<hr class="half-width">
+<p>In the previous step we identified clusters of contigs, which could
+each represent true replicons present in our isolates. However, they
+were primarily clustered using Mash distance and before alignment, they
+need to be standardised in terms of length, similarity and orientation.
+We will use Trycycler’s ‘reconcile’ function to achieve this. (<a href="https://github.com/rrwick/Trycycler/wiki/Reconciling-contigs" class="external-link">Reconciling
+contigs</a>)</p>
+<figure><img src="../fig/folder4.jpg" alt="Trycycler folder after clusters have been manually assessed" class="figure mx-auto d-block"><div class="figcaption">Trycycler folder after clusters have been
+manually assessed</div>
+</figure></section><section id="running-trycycler-reconcile"><h2 class="section-heading">Running Trycycler Reconcile<a class="anchor" aria-label="anchor" href="#running-trycycler-reconcile"></a>
+</h2>
+<hr class="half-width">
+<p>The basic command to reconcile a cluster looks like this:</p>
+<pre><code>trycycler reconcile --reads *.fastq.gz --cluster_dir trycycler/cluster_001 </code></pre>
+<p>and we could submit this as a cluster job using the following command
+(changing the number of the cluster each time for the stderr, stdout and
+–cluster_dir parameters):</p>
+<pre><code>qsub -cwd -V -N tr_test -e err/try_rec_001 -o out/try_rec_001 -pe thread 4 -b y "conda activate trycycler-0.5.4 &amp;&amp; trycycler reconcile --reads *.fastq.gz --cluster_dir trycycler/cluster_001 --threads 4 &amp;&amp; conda deactivate"
+qsub -cwd -V -N tr_test -e err/try_rec_002 -o out/try_rec_002 -pe thread 4 -b y "conda activate trycycler-0.5.4 &amp;&amp; trycycler reconcile --reads *.fastq.gz --cluster_dir trycycler/cluster_002 --threads 4 &amp;&amp; conda deactivate"</code></pre>
+<p>However, for simplicity, a bash script is provided which will detect
+the clusters present, and generate and submit a script to run Trycycler
+reconcile on each. You can run it like this:</p>
+<pre><code><span><span class="va">..</span><span class="op">/</span><span class="va">scripts</span><span class="op">/</span><span class="va">reconcile.sh</span></span></code></pre>
+<p>If Trycycler was able to reconcile the cluster, a new file
+‘2_all_seqs.fasta’ will be generated in the cluster directory,
+containing the reconciled contigs. Frequently, it will fail to produce
+output, meaning that manual intervention is required to resolve.</p>
+</section><section id="manual-interventions"><h2 class="section-heading">Manual interventions<a class="anchor" aria-label="anchor" href="#manual-interventions"></a>
+</h2>
+<hr class="half-width">
+<!-- 
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use. 
+ --></section></section>
 </div>
     </main>
 </div>
