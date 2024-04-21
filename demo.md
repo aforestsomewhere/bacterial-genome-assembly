@@ -1,5 +1,5 @@
 ---
-title: "Using Trycycler on the Migale cluster"
+title: "Evaluating Clusters"
 teaching: 30
 exercises: 2
 ---
@@ -12,8 +12,8 @@ exercises: 2
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Become familiar with the file structure and commands
-- Understand the inputs and outputs to Trycycler Reconcile
+- Become familiar with the directory structure and commands on Migale/SGE
+- Understand how to evaluate and mark "bad" clusters
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -90,9 +90,5 @@ It is unlikely that Trycycler can be fully automated, but we could consider writ
 * etc!
 
 :::::::::::::::::::::::::::::::::::::::::::::::
-
-## Trycycler Reconcile
-
-
 
 [r-markdown]: https://rmarkdown.rstudio.com/
