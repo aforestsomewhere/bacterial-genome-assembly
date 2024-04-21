@@ -62,6 +62,7 @@ episodes:
 - introduction.Rmd
 - demo.Rmd
 - reconcile.Rmd
+- msa-partition-consensus.Rmd
 
 # Information for Learners
 learners: 
