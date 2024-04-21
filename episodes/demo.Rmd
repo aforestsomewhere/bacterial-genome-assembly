@@ -73,9 +73,9 @@ t.render("contigs_newick.png")
 ```
 You can execute this in the sample directory with this command:
 ```
-qsub -cwd -V -N tree_view -o /out/tree_view -e /err/tree_view -b y "conda activate ete3-3.1.3 && python3 /save_projet/domino_wp3_isollates/scripts/ete.py && conda deactivate"
+qsub -cwd -V -N tree_view -o out/tree_view.o -e err/tree_view.e -b y "conda activate ete3-3.1.3 && python3 /save_projet/domino_wp3_isollates/scripts/ete.py && conda deactivate"
 ```
-It should produce "contigs_newick.png", which you can then open and view. 
+It should produce "contigs_newick.png" in the trycycler folder, which you can then open and view. 
 ![Contigs_newick png generated with ETEToolkit](fig/contigs_newick.png){alt='Contigs_newick png generated with ETEToolkit'}
 
 To remove a cluster, you can simply rename the folder e.g. to rm_cluster_002 (or bad_cluster_002 - it doesn't matter once the directory name does not commence with "cluster_". This keeps the sequences, in case we want to revisit the decision later on.
