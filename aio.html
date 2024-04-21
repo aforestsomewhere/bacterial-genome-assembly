@@ -728,7 +728,7 @@ renaming</div>
   <h3 class="accordion-header" id="headingSpoiler1">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Hackathon: semi-automation of cluster assessment?</h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>If you can, make a quick note of why you decided to exclude/include
 clusters on the recording sheet.</p>
@@ -794,7 +794,11 @@ each represent true replicons present in our isolates. However, they
 were primarily clustered using Mash distance and before alignment, they
 need to be standardised in terms of length, similarity and orientation.
 We will use Trycycler’s ‘reconcile’ function to achieve this. (<a href="https://github.com/rrwick/Trycycler/wiki/Reconciling-contigs" class="external-link">Reconciling
-contigs</a>)</p>
+contigs</a>). Additionally, as most (but not all!) bacterial replicons
+are circular, Trycycler will try to cleanly circularise each contig
+using the other other contigs in the cluster as a reference: for more
+information, see: <a href="https://github.com/rrwick/Trycycler/wiki/How-circularisation-repair-works" class="external-link">Trycycler
+wiki: How circularisation repair works</a>.</p>
 <figure><img src="fig/folder4.jpg" alt="Trycycler folder after clusters have been manually assessed" class="figure mx-auto d-block"><div class="figcaption">Trycycler folder after clusters have been
 manually assessed</div>
 </figure></section><section id="running-trycycler-reconcile"><h2 class="section-heading">Running Trycycler Reconcile<a class="anchor" aria-label="anchor" href="#running-trycycler-reconcile"></a>
@@ -832,7 +836,7 @@ Trycycler reconcile on just that cluster:</p>
 <pre><code>qsub -cwd -V -N tr_test -e err/try_rec_001 -o out/try_rec_001 -pe thread 4 -b y "conda activate trycycler-0.5.4 &amp;&amp; trycycler reconcile --reads *.fastq.gz --cluster_dir trycycler/cluster_001 --threads 4 &amp;&amp; conda deactivate"</code></pre>
 <p>If we are left with very few contigs in a cluster (e.g. &lt;3) then
 it will probably be worth making more assemblies before proceeding
-further, but as we started with 9 assemblies we have some leeway.</p>
+further - as we started with 9 assemblies, we have some leeway.</p>
 </section><section id="manual-repair-of-overlap"><h2 class="section-heading">Manual repair of overlap<a class="anchor" aria-label="anchor" href="#manual-repair-of-overlap"></a>
 </h2>
 <hr class="half-width">
@@ -842,6 +846,26 @@ and is particularly common with plasmids, which can be double or even
 tripled in length. We can manually remove the (presumed) duplicate
 sequence in a text editor: <a href="https://github.com/rrwick/Trycycler/wiki/FAQ-and-miscellaneous-tips#manually-fixing-overlap" class="external-link">Trycycler
 Wiki: Manually fixing overlap</a>.</p>
+</section><section id="linear-plasmidsphage"><h2 class="section-heading">Linear plasmids/phage<a class="anchor" aria-label="anchor" href="#linear-plasmidsphage"></a>
+</h2>
+<hr class="half-width">
+<p>Phage genomes can adopt linear conformations. Linear plasmids have
+also been described in some bacteria in the order ‘Enterobacterales’
+e.g. <em>Klebsiella</em>, <em>Salmonella</em>. If you have have a
+suspicious cluster of small contigs that will not circularise, you could
+try to <a href="https://www.ncbi.nlm.nih.gov/geo/query/blast.html" class="external-link">Blast</a> one
+of the sequences and see the closest hits. More frequently, such
+clusters tend to represent chromosomal fragments e.g. prophage, which
+one or more assemblers excluded from the main chromosome.</p>
+</section><section id="modifying-the-parameters-for-trycycler-reconcile"><h2 class="section-heading">Modifying the parameters for Trycycler reconcile<a class="anchor" aria-label="anchor" href="#modifying-the-parameters-for-trycycler-reconcile"></a>
+</h2>
+<hr class="half-width">
+<p>The default parameters of the ‘reconcile’ function work well for most
+cases, and it is likely preferrable to exclude a handful of contigs
+first. In certain scenarios, you may wish to amend the <a href="https://github.com/rrwick/Trycycler/wiki/Reconciling-contigs#settings" class="external-link">thresholds</a>,
+particularly ‘–max_length_diff’, ‘–max_add_seq’,
+‘–max_add_seq_percent’,‘–max_trim_seq’ and ‘–max_trim_seq_percent’. You
+can add the flags to your ‘qsub’ submission command.</p>
 <!-- 
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
