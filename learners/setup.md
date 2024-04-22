@@ -13,7 +13,9 @@ You don't need to download any data ahead of time, it is available on the Migale
 
 * **Working directory (5Tb)**: /work_projet/domino_wp3_isollates
 
-* **Spreadsheet with assembly info**: https://docs.google.com/spreadsheets/d/1T0EJeiJInzjfJgT4qG3eR0-DRwHkiHjyb937-c_RnLQ/edit#gid=0 
+* **Spreadsheet with assembly info**: [link](https://docs.google.com/spreadsheets/d/1vYWDi_9l-_z-1TuMYEx07XALDCpqBUC-cbd40E9qmII/edit?usp=sharing)
+  
+* **Worksheet template** [link](https://docs.google.com/spreadsheets/d/1kXsS7-Urvd9w1SSgv2vY3YVN2g4kkf4A-m-_ixPnjSg/edit?usp=sharing)
 
 ## Software Setup
 
